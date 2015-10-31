@@ -1,0 +1,820 @@
+<!doctype html>
+< lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>reveal.js - The HTML Presentation Framework</title>
+
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Hakim El Hattab">
+
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="../revealjs/css/reveal.css">
+  <!--<link rel="stylesheet" href="../revealjs/css/theme/night.css" id="theme"> -->
+  <link rel="stylesheet" href="../revealjs/css/theme/league.css" id="theme">
+
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="../revealjs/lib/css/zenburn.css">
+
+  <link rel="stylesheet" href="../revealjs/lib/font-awesome/css/font-awesome.min.css"/>
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? '../revealjs/css/print/pdf.css' : '../revealjs/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+  <style>
+    .red { color: red !important; }
+    .right { text-align: right; }
+    .btn { padding: 10px 30px; font-size: 15px; border-radius: 5px; background-color: white; }
+    .super-box { text-align: center; width: 100%; display: block; padding: 20px; }
+    .box { background-color: white; border: solid 1px lightgray; width: 200px; margin: auto; color: black; display: inline-block; padding: 20px; }
+    .no-border { border: 0 !important; }
+    ul.fa-ul { list-style: none !important; }
+    .important { color: orange; }
+    .title-index { color: red !important; }
+  </style>
+
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    <section>
+      <h2>Coder proprement en JavaScript</h2>
+
+      <h3>Challenge accepted!</h3>
+      <hr/>
+      <p>
+        <small>par <a href="http://linsolas.github.io">Romain Linsolas</a> / <a href="http://twitter.com/romaintaz">@romaintaz</a>
+        </small>
+      </p>
+    </section>
+
+    <section>
+      <h2>Romain Linsolas</h2>
+
+      <h3><img src="./images/sg.png" class="no-border" alt=""/></h3>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> Leader technique <code>ez-web</code></li>
+        <li><i class="fa-li fa fa-caret-right"></i> Développeur Java & web</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Tout un tas d'autres choses...</li>
+        <li><i class="fa-li fa fa-twitter"></i> @romaintaz</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Pourquoi cette présentation ?</h2>
+    </section>
+
+    <section>
+      <h3>Back in 2005...</h3>
+					<pre><code class="hljs" data-trim>
+<div id="error_box" style="display: none" class="error">Please fill-in beer name</div>
+<form id="beerForm" action="addBeer.do" method="POST" onsubmit="return checkForm()">
+  <label for="beer_name">Beer name:</label>
+  <input name="name" id="beer_name">
+  <input type="submit" value="Add">
+</form>
+
+<script type="application/javascript">
+  function checkForm() {
+    var beerName = document.getElementById("beer_name").value;
+    if (beerName == '') {
+      document.getElementById("beer_name").className += "invalid";
+      document.getElementById("error_box").style.display = "block";
+      return false;
+    }
+    return true;
+  }
+</script>
+          </code></pre>
+      <hr/>
+      <div class="super-box">
+        <div class="box">
+          <label for="beer_name">Beer name:</label>
+          <br>
+          <input name="name" id="beer_name">
+          <br>
+          <input type="submit" value="Add">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Le JavaScript est <span class="important">partout</span> !</h2>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> Runtime le plus distribué (+90% des sites l'utilisent)</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Applications mobiles</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Côté serveur (NodeJS)</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Arrivée de NativeJS</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Les géants du web ont changé la donne !</h3>
+      <img src="./images/grumpy-facebook.png" alt=""/>
+    </section>
+    <section>
+      <!-- TODO Remplacer par Google Inbox ? -->
+      <img src="./images/gmail.png" alt=""/>
+    </section>
+
+    <section>
+      <h3>De nouveaux besoins</h3>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> Les utilisateurs veulent des applications <span class="important">réactives</span>, vivantes et dynamiques.</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Enjeu important de la qualité.</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Problématiques des <span class="important">réseaux mobiles</span>.</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h3>Challenge: 100,000 lignes de JavaScript ?</h3>
+      <img src="./images/peur.png" alt=""/>
+    </section>
+
+    <section>
+      <h3>Le JavaScript c'est <span class="fragment fade-out">sale</span><span class="fragment">surprenant</span></h3>
+      <img src="./images/js-sale.png" alt=""/>
+    </section>
+
+    <section>
+      <h3>Petit jeu...</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th></th>
+            <th>Résultat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code id="code1">[] + []</code></td>
+            <td><button class="btn" onclick="game(1)"><i class="fa fa-arrow-right"></i></button></td>
+            <td class="right"><code id="res1"></code></td>
+          </tr>
+          <tr class="fragment">
+            <td><code id="code2">[] + {}</code></td>
+            <td><button class="btn" onclick="game(2)"><i class="fa fa-arrow-right"></i></button></td>
+            <td class="right"><code id="res2"></code></td>
+          </tr>
+          <tr class="fragment">
+            <td><code id="code3">{} + []</code></td>
+            <td><button class="btn" onclick="game(3)"><i class="fa fa-arrow-right"></i></button></td>
+            <td class="right"><code id="res3"></code></td>
+          </tr>
+          <tr class="fragment">
+            <td><code id="code4">{} + {}</code></td>
+            <td><button class="btn" onclick="game(4)"><i class="fa fa-arrow-right"></i></button></td>
+            <td class="right"><code id="res4"></code></td>
+          </tr>
+          <tr class="fragment">
+            <td><code id="code5">++[[]][+[]]+[+[]] === "10"</code></td>
+            <td><button class="btn" onclick="game(5)"><i class="fa fa-arrow-right"></i></button></td>
+            <td class="right"><code id="res5"></code></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <script>
+      function game(index) {
+        var code = document.querySelector('#code' + index).innerHTML;
+        var res = eval(code);
+        if (res === '') {
+          res = '""';
+        }
+        document.querySelector('#res' + index).innerHTML = res;
+      }
+    </script>
+
+    <section data-background="./images/darth-vader.png" data-background-size="500px">
+      <h1 class="red">WTF?</h1>
+      <h1>&nbsp;</h1>
+      <h1>&nbsp;</h1>
+    </section>
+
+    <section>
+      <h3>Autre problème</h3>
+      <pre><code class="hljs" data-trim>
+function updateVAT() {
+  var price = document.getElementById("price").value;
+  return price + (price * 0.196);
+}
+      </code></pre>
+      <div class="super-box">
+        <div class="box">
+          <div>
+            <label for="price">Price:</label>
+            <input type="text" id="price" onchange="calculateTva()" style="font-size: 15px;"/>
+            <hr/>
+            Prix avec TVA: <strong><span id="price-res"></span>€</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      function calculateTva() {
+        var p = document.querySelector('#price').value;
+        document.querySelector('#price-res').innerHTML = p + (p * 0.196);
+      }
+    </script>
+
+    <section>
+      <h3>Pollution de l'espace de nommage</h3>
+      <pre><code class="hljs" data-trim>
+// beers.js
+function checkForm() {
+  var beerName = document.forms["beerForm"]["name"].value;
+  if (beerName == '') {
+    document.getElementById("name_field").className += "invalid";
+    return false;
+  }
+  return true;
+}
+
+// sodas.js
+function checkForm() {
+  var sodaName = document.forms["sodaForm"]["name"].value;
+  if (sodaName == '') {
+    document.getElementById("name_field").className += "invalid";
+    return false;
+  }
+  return true;
+}
+      </code></pre>
+    </section>
+
+    <section>
+      <h3>Scope global par défaut</h3>
+      <pre><code class="hljs" data-trim>
+function subLoop() {
+  for (i = 0; i < 10; i++) {
+    console.log(i);
+  }
+}
+
+for (var i = 0; i < 10; i++) {
+  subLoop();
+}
+      </code></pre>
+      <hr/>
+      <button class="btn" onclick="testLoop()"><i class="fa fa-play"></i> Test</button>
+      <br/>
+      Résultat: <code id="loop-res"></code>
+    </section>
+    <script>
+      function testLoop() {
+        var code = document.getElementById('loop-res');
+        var suffix = '';
+        function subLoop() {
+          for (ii = 0; ii < 10; ii++) {
+            code.innerHTML += suffix + ii;
+            suffix = ' | ';
+          }
+        }
+
+        for (var ii = 0; ii < 10; ii++) {
+          subLoop();
+        }
+      }
+    </script>
+
+    <section>
+      <h3>Tout est public par défaut !</h3>
+      <pre><code class="hljs" data-trim>
+var counter = {
+  privateValue: 0,
+  increment: function() {
+    counter.privateValue++;
+    return counter.privateValue;
+  }
+};
+
+// ailleurs dans le code...
+counter.increment(); // 1
+counter.privateValue = 0;
+counter.increment(); // 1 :(
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>Comment coder proprement 100,000 lignes de JS ?</h2>
+    </section>
+
+    <section>
+      <h3><span class="title-index">#0</span> Ne pas en faire, déléguer...</h3>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> JSF</li>
+        <li><i class="fa-li fa fa-caret-right"></i> GWT</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Vaadin</li>
+        <li><i class="fa-li fa fa-caret-right"></i> ...</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3><span class="title-index">#1</span> Utiliser d'autres langages</h3>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> Google Dart</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Coffee Script</li>
+        <li><i class="fa-li fa fa-caret-right"></i> ECMAScript 6 (2015)</li>
+        <li><i class="fa-li fa fa-caret-right"></i> TypeScript</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>ES6 / ES2015</h3>
+      <p>ECMAScript 6 est la nouvelle spécification du langage JavaScript</p>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> Définition des <code>class</code></li>
+        <li><i class="fa-li fa fa-caret-right"></i> Opérateur <code>=></code></li>
+        <li><i class="fa-li fa fa-caret-right"></i> Syntaxe <code>for ... of</code></li>
+        <li><i class="fa-li fa fa-caret-right"></i> Modules</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Promesses</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Structure de données</li>
+        <li><i class="fa-li fa fa-caret-right"></i> ...</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Example ES6</h3>
+      <pre><code class="hljs" data-trim>
+class Foo extends Bar {
+  constructor(name) {
+    this.name = name || 'World';
+  }
+
+  welcome() {
+    return 'Hello ' + this.name;
+  }
+}
+      </code></pre>
+    </section>
+    <section>
+      <h3>Example ES6</h3>
+      <pre><code class="hljs" data-trim>
+var nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// ES6
+var pairs = nombres.filter(n => n % 2 === 0);
+
+// ES5
+var pairs = nombres.filter(function(n) {
+  return n % 2 === 0;
+});
+      </code></pre>
+    </section>
+
+    <section>
+      <h3>TypeScript</h3>
+      <p>ES5 <i class="fa fa-caret-right"></i> ES6 <i class="fa fa-caret-right"></i> TypeScript</p>
+      <p>Apporte essentiellement le <strong>typage</strong>, les <strong>interfaces</strong> et les <strong>decorators</strong>.</p>
+    </section>
+
+    <section>
+      <h3>Example TypeScript</h3>
+      <pre><code class="hljs" data-trim>
+interface ClockInterface {
+  currentTime: Date;
+  setTime(d: Date);
+}
+
+class Clock implements ClockInterface  {
+  currentTime: Date;
+  setTime(d: Date) {
+    this.currentTime = d;
+  }
+  constructor(h: number, m: number) {
+    // ...
+  }
+}
+      </code></pre>
+    </section>
+
+    <section>
+      <h3><span class="title-index">#2</span> Les architectures MV*</h3>
+      <p>Les nouveaux besoins imposent des changements d'architecture :</p>
+      <ul class="fragment2 fa-ul">
+        <li><i class="fa-li fa fa-clock-o"></i> Temps de réponse <span class="important">instantané</span></li>
+        <li><i class="fa-li fa fa-mobile"></i> Gestion des réseaux lents, aléatoires...</li>
+        <li><i class="fa-li fa fa-power-off"></i> Mode <span class="important">déconnecté</span></li>
+      </ul>
+      <p class="fragment">Les architectures <strong>SPA</strong> (<em>Single Page Application</em>)<br/> sont une solution.</p>
+    </section>
+    <section>
+      <h3>Architecture classique</h3>
+      <img src="./images/mvc1.png" alt="" class="no-border"/>
+    </section>
+    <section>
+      <h3>Architecture "SPA"</h3>
+      <img src="./images/mvc2.png" alt="" class="no-border"/>
+    </section>
+
+    <section>
+      <h3>AngularJS</h3>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> Framework SPA par Google</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Découplage "MVC"</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Complètement testable</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Double binding</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Directives</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Enorme communauté</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Example AngularJS</h3>
+      <pre><code class="hljs" data-trim>
+<html ng-app>
+  <div ng-controller="TodoListController as ctrl">
+    <span>{{ctrl.remaining()}} of {{ctrl.items.length}} remaining</span>
+    <!-- Liste des éléments -->
+    <ul>
+      <li ng-repeat="item in ctrl.items">
+        <input type="checkbox" ng-model="item.done">
+        <span>{{item.text}}</span>
+      </li>
+    </ul>
+    <!-- Ajout d'un élément -->
+    <form ng-submit="ctrl.addItem()">
+      <input type="text" ng-model="ctrl.newItem">
+      <input class="btn-primary" type="submit" value="add">
+    </form>
+  </div>
+</html>
+      </code></pre>
+    </section>
+    <section>
+      <h3>Code JS</h3>
+      <pre><code class="hljs" data-trim>
+angular.module('todoApp', [])
+  .controller('TodoListController', function() {
+    this.items = [{text:'Coder en JS', done: true}, ...];
+
+    this.addItem = function() {
+      this.items.push({text: this.newItem, done: false});
+      this.newItem = '';
+    }.bind(this);
+
+    this.remaining = function() {
+      var count = 0;
+      angular.forEach(this.items, function(todo) {
+        count += todo.done ? 0 : 1;
+      });
+      return count;
+    }.bind(this);
+  });
+      </code></pre>
+    </section>
+
+    <section>
+      <h3>Angular 2</h3>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> Nouvelle version d'Angular 2.</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Concepts de la v1 abandonnés.</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Basé sur les <code>Components</code>.</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Ecrit en TypeScript.</li>
+        <li><i class="fa-li fa fa-question-circle"></i> Bêta en novembre, stable en mars.</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Example Angular 2</h3>
+      <pre><code class="hljs" data-trim>
+import {bootstrap, Component, FORM_DIRECTIVES} from 'angular2/angular2';
+
+class Hero {id: number; name: string;}
+
+@Component({
+  selector: 'my-app',
+  template:`
+    <h1>{{title}}</h1>
+    <h2>{{hero.name}} details!</h2>
+    <div><label>id: </label>{{hero.id}}</div>
+    <div>
+      <label>name: </label>
+      <div><input [(ng-model)]="hero.name" placeholder="name"></div>
+    </div>
+    `,
+  directives: [FORM_DIRECTIVES]
+})
+class AppComponent {
+  public title = 'Tour of Heroes';
+  public hero: Hero = {
+    id: 1,
+    name: 'Windstorm'
+  };
+}
+
+bootstrap(AppComponent);
+      </code></pre>
+    </section>
+    <section>
+      <h3>Côté HTML</h3>
+      <pre><code class="hljs" data-trim>
+&lt;script&gt;
+  System.config({
+    transpiler: 'typescript',
+    typescriptOptions: { emitDecoratorMetadata: true }
+  });
+  System.import('./app.ts');
+&lt;/script&gt;
+<div>
+  <my-app>loading...</my-app>
+</div>
+      </code></pre>
+    </section>
+
+
+    <section>
+      <h3><span class="title-index">#3</span> Modulariser</h3>
+      <p>Apprendre à découper son code en <span class="important">modules</span>.</p>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> Isolation du code.</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Faible couplage.</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Présentation d'une interface.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3><span class="title-index">#4</span> Analyser son code</h3>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> Être capable de détecter des <span class="important">parties sales</span>.</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Limiter les <span class="important">erreurs</span> de développements.</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Forcer les <span class="important">bonnes pratiques</span>.</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Intégration dans les IDE pour des retours immédiats.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Les outils</h3>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> JsHint</li>
+        <li><i class="fa-li fa fa-caret-right"></i> JsLint</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Jscs</li>
+        <li><i class="fa-li fa fa-caret-right"></i> SonarQube</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3><span class="title-index">#5</span> Rendre son code expressif</h3>
+      <p>Un code expressif c'est un code :</p>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> simple</li>
+        <li><i class="fa-li fa fa-caret-right"></i> concis</li>
+        <li><i class="fa-li fa fa-caret-right"></i> lisible</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Sans jQuery</h3>
+      <pre><code class="hljs" data-trim>
+<form onsubmit="return checkForm();">...</form>
+
+  <script type="text/javascript">
+    function checkForm() {
+      var beerName = document.getElementById('beer_name').value;
+      if (beerName === '') {
+        document.getElementById('beer_name').className += 'invalid';
+        document.getElementById('error_box').style.display = 'block';
+        return false;
+      }
+      return true;
+    }
+  </script>
+      </code></pre>
+    </section>
+    <section>
+      <h3>Avec jQuery</h3>
+      <pre><code class="hljs" data-trim>
+$('#beerForm').submit(function() {
+  if ($('#beer_name').val() === '') {
+    $('#beer_name').addClass('invalid');
+    $('#error_box').show();
+    return false;
+  }
+  return true;
+});
+        </code></pre>
+    </section>
+
+    <section>
+      <h3>N'oubliez pas !</h3>
+      <blockquote class="fragment">
+        "Codez comme si la personne qui devait maintenir votre code était un dangereux psychopathe qui connait votre adresse."
+      </blockquote>
+      <blockquote class="fragment">"Ou pire, ce sera peut-être vous dans 6 mois !"</blockquote>
+    </section>
+
+    <section>
+      <h3><span class="title-index">#6</span> Tester</h3>
+      <blockquote>
+        "Le seul code qui ne contient pas de bug est celui que l'on a pas encore écrit !"
+      </blockquote>
+    </section>
+
+    <section>
+      <h3>Les tests unitaires</h3>
+      <p>
+        Le test <span class="red">unitaire</span> est là pour s'assurer qu'un bout de code, isolé du reste, fait ce pour quoi il a été écrit.
+      </p>
+      <p class="fragment">Un bon test unitaire est :</p>
+      <ul class="fragment fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> Rapide</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Isolé</li>
+        <li><i class="fa-li fa fa-caret-right"></i> "Fragile"</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Compréhensible</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Exemple d'un test unitaire</h3>
+      <pre><code class="hljs" data-trim>
+describe("Testing _ lib", function() {
+  beforeEach(function() {
+    // To do before every test
+  });
+
+  it("should be 42", function() {
+    var res = _.last([1, 2, 3, 42]);
+    expect(res).toBe(42);
+  });
+
+  it("should not be 1", function() {
+    var res = _.max([1, 2, 3]);
+    expect(res).not.toBe(1);
+  });
+});
+      </code></pre>
+    </section>
+
+    <section>
+      <h3>Les tests d'intégration (e2e)</h3>
+      <p>
+        Les tests d'intégration (<em>End To End</em>) visent à tester une application de <span class="important">bout en bout</span>.
+        Nous utilisons des "robots" (Selenium...) qui <em>simulent</em> des actions et vérifient un certain nombre de choses.
+      </p>
+    </section>
+    <section>
+      <h3>Exemple de test e2e</h3>
+      <pre><code class="hljs" data-trim>
+describe('angularjs homepage todo list', function() {
+  it('should add a todo', function() {
+    browser.get('https://angularjs.org');
+
+    element(by.model('todoList.todoText')).sendKeys('write first protractor test');
+    element(by.css('[value="add"]')).click();
+
+    var todoList = element.all(by.repeater('todo in todoList.todos'));
+    expect(todoList.count()).toEqual(3);
+    expect(todoList.get(2).getText()).toEqual('write first protractor test');
+
+    // You wrote your first test, cross it off the list
+    todoList.get(2).element(by.css('input')).click();
+    var completedAmount = element.all(by.css('.done-true'));
+    expect(completedAmount.count()).toEqual(2);
+  });
+});
+      </code></pre>
+    </section>
+
+    <section>
+      <h3>Le principe du TDD</h3>
+      <p>
+        Le TDD, <em>Test Driven Development</em> pousse à écrire les tests <span class="red">avant</span> le code.
+      </p>
+      <img src="./images/tdd.gif" alt=""/>
+    </section>
+
+    <section>
+      <h3><span class="title-index">#7</span> L'automatisation</h3>
+      <p>
+        L'automatisation est la clé du succès de l'équipe :
+      </p>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-random"></i> <span class="important">Intégration continue</span> des développements de l'équipe</li>
+        <li><i class="fa-li fa fa-play"></i> Exécution automatique des <span class="important">tests</span> unitaires</li>
+        <li><i class="fa-li fa fa-bug"></i> Détection des régressions</li>
+        <li><i class="fa-li fa fa-search"></i> Analyse du code</li>
+        <li><i class="fa-li fa fa-envelope"></i> <span class="important">Informer</span> immédiatement les développeurs de la moindre alerte</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3><span class="title-index">#8</span> Utiliser les bons outils</h3>
+      <img src="./images/wheels.png" alt=""/>
+    </section>
+    
+    <section>
+      <h3>IntelliJ / WebStorm</h3>
+      <img src="./images/intellij.jpg" alt=""/>
+    </section>
+
+    <section>
+      <h3>Chrome Devtools</h3>
+      <img src="./images/chrome-devtools.png" alt=""/>
+    </section>
+
+    <section>
+      <h1>Conclusion</h1>
+    </section>
+
+    <section data-background="./images/bisounours.png">
+
+    </section>
+
+    <section>
+      <h3>Hélas pas tout à fait <i class="fa fa-frown-o"></i></h3>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-caret-right"></i> Courbe d'apprentissage</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Nouveautés à n'en plus finir</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Pérénité</li>
+      </ul>
+      <!--<img src="./images/new-js.png" alt="" class="no-border"/>-->
+    </section>
+
+    <section data-background="./images/new-js.png"></section>
+
+    <section>
+      <h1><i class="fa fa-comments"></i></h1>
+      <h2>Questions</h2>
+    </section>
+
+    <!--<section>-->
+    <!--<h2>Speaker View</h2>-->
+    <!--<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>-->
+    <!--<p>Press the <em>S</em> key to try it out.</p>-->
+
+    <!--<section>-->
+    <!--<h2>Export to PDF</h2>-->
+    <!--<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>-->
+    <!--<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>-->
+    <!--</section>-->
+
+  </div>
+
+</div>
+
+<script src="../revealjs/lib/js/head.min.js"></script>
+<script src="../revealjs/js/reveal.js"></script>
+
+<script>
+
+  // Full list of configuration options available at:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+
+    slideNumber: true,
+
+    transition: 'convex', // 'slide', // none/fade/slide/convex/concave/zoom
+
+    // Optional reveal.js plugins
+    dependencies: [
+      {
+        src: '../revealjs/lib/js/classList.js', condition: function () {
+        return !document.body.classList;
+      }
+      },
+      {
+        src: '../revealjs/plugin/markdown/marked.js', condition: function () {
+        return !!document.querySelector('[data-markdown]');
+      }
+      },
+      {
+        src: '../revealjs/plugin/markdown/markdown.js', condition: function () {
+        return !!document.querySelector('[data-markdown]');
+      }
+      },
+      {
+        src: '../revealjs/plugin/highlight/highlight.js', async: true, condition: function () {
+        return !!document.querySelector('pre code');
+      }, callback: function () {
+        hljs.initHighlightingOnLoad();
+      }
+      },
+      {src: '../revealjs/plugin/zoom-js/zoom.js', async: true},
+      {src: '../revealjs/plugin/notes/notes.js', async: true}
+    ]
+  });
+
+</script>
+
+</body>
+</html>
