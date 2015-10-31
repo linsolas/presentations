@@ -1,0 +1,39 @@
+.red {
+  color: red !important;
+}
+.right {
+  text-align: right;
+}
+.btn {
+  padding: 10px 30px;
+  font-size: 15px;
+  border-radius: 5px;
+  background-color: white;
+}
+.super-box {
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding: 20px;
+}
+.box {
+  background-color: white;
+  border: solid 1px lightgray;
+  width: 200px;
+  margin: auto;
+  color: black;
+  display: inline-block;
+  padding: 20px;
+}
+.no-border {
+  border: 0 !important;
+}
+ul.fa-ul {
+  list-style: none !important;
+}
+.important {
+  color: orange;
+}
+.title-index {
+  color: red !important;
+}

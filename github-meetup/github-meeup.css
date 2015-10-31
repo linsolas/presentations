@@ -1,0 +1,15 @@
+.red {
+  color: red !important;
+}
+.right {
+  text-align: right;
+}
+.no-border {
+  border: 0 !important;
+}
+ul.fa-ul {
+  list-style: none !important;
+}
+.important {
+  color: orange;
+}
