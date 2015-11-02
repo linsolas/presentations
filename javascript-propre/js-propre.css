@@ -1,6 +1,9 @@
 .red {
   color: red !important;
 }
+.left {
+  text-align: left;
+}
 .right {
   text-align: right;
 }
@@ -36,4 +39,7 @@ ul.fa-ul {
 }
 .title-index {
   color: red !important;
+}
+i.fa-twitter {
+  color: #55acee;
 }
