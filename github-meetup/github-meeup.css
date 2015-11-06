@@ -1,6 +1,9 @@
 .red {
   color: red !important;
 }
+.green {
+  color: green !important;
+}
 .right {
   text-align: right;
 }
