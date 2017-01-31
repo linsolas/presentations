@@ -1,12 +1,4 @@
-.red {
-  color: red !important;
-}
-.left {
-  text-align: left;
-}
-.right {
-  text-align: right;
-}
+
 .btn {
   padding: 10px 30px;
   font-size: 15px;
@@ -28,25 +20,7 @@
   display: inline-block;
   padding: 20px;
 }
-.no-border {
-  border: 0 !important;
-}
-ul.fa-ul {
-  list-style: none !important;
-}
-.important {
-  color: orange;
-}
-.title-index {
-  color: red !important;
-}
-i.fa-twitter {
-  color: #55acee;
-}
 
 .strike {
   text-decoration: line-through;
-}
-.lower {
-  text-transform: lowercase;
 }

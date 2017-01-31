@@ -1,0 +1,95 @@
+/* correct position of revealjs left arrow */
+.reveal .controls .navigate-left {
+  left: 0;
+}
+
+.red {
+  color: #e60028 !important;
+}
+.green {
+  color: #35bd5b !important;
+}
+
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+
+ul.fa-ul {
+  list-style: none !important;
+}
+
+ul.fa-ul > li > i.fa:not(.fa-twitter):not(.fa-facebook-official) {
+  color: #999;
+}
+
+.important {
+  color: #f17100;
+}
+
+i.fa-twitter {
+  color: #0084b4;
+}
+
+i.fa-facebook, i.fa-facebook-official {
+  color: #3b5998;
+}
+
+.no-border {
+  border: 0 !important;
+}
+
+.blur, .blur-more {
+  background-color: rgba(0, 0, 0, .33);
+  border-radius: 5px;
+  padding: 25px !important;
+}
+.blur-more {
+  background-color: rgba(0, 0, 0, .66);
+}
+
+.credits {
+  position: absolute ;
+  bottom: 0;
+  left: 0;
+  font-size: 12px !important;
+}
+.credits.right {
+  right: 0;
+}
+
+.credits a {
+  color: #ccc;
+}
+.credits a:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  content: '\f083';
+  margin-right: 5px;
+}
+
+.two-parts {
+  width: 100%;
+}
+
+.left-part, .right-part {
+  width: 45%;
+  display: inline-block;
+  text-align: left;
+}
+.left-part {
+  float: left;
+}
+
+.source-sans {
+  font-family: "Source Sans Pro", Helvetica, sans-serif !important;
+}
+
+h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, h6 > code {
+  text-transform: none;
+}
