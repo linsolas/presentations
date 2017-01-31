@@ -22,7 +22,7 @@
 .box {
   background-color: white;
   border: solid 1px lightgray;
-  width: 200px;
+  width: 300px;
   margin: auto;
   color: black;
   display: inline-block;
@@ -42,4 +42,11 @@ ul.fa-ul {
 }
 i.fa-twitter {
   color: #55acee;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+.lower {
+  text-transform: lowercase;
 }

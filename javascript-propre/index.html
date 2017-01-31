@@ -44,12 +44,12 @@
   <!-- Any section element inside of this container is displayed as a slide -->
   <div class="slides">
     <section>
-      <h2>Coder proprement en JavaScript</h2>
-
-      <h3>Challenge accepted!</h3>
+      <h3>Coder proprement en JavaScript ?</h3>
+      <br>
+      <h4>Challenge accepted!</h4>
       <hr/>
       <p>
-        <small>par <a href="http://linsolas.github.io">Romain Linsolas</a> / <a href="http://twitter.com/romaintaz">@romaintaz</a>
+        <small>par <a href="http://linsolas.github.io">Romain Linsolas</a> | <a href="http://twitter.com/romaintaz">@romaintaz</a>
         </small>
       </p>
     </section>
@@ -67,8 +67,19 @@
     </section>
 
     <section>
-      <h3>ez-web</h3>
-      <img src="../images/ezweb-home.png">
+      <h3>ez-web ?</h3>
+      <section>
+        <img src="../images/ezweb-home.png">
+      </section>
+      <section>
+        <ul class="fa fa-ul">
+          <li><i class="fa-li fa fa-google"></i> Stack technique basée sur AngularJS</li>
+          <li><i class="fa-li fa fa-twitter"></i> Bootstrap "SG"</li>
+          <li><i class="fa-li fa fa-map-signs"></i> Conventions de développement</li>
+          <li><i class="fa-li fa fa-object-group"></i> Composants avancés</li>
+          <li><i class="fa-li fa fa-ambulance"></i> Support et évolutions</li>
+        </ul>
+      </section>
     </section>
 
     <section>
@@ -114,17 +125,18 @@
         <li><i class="fa-li fa fa-caret-right"></i> Runtime le plus distribué (+90% des sites l'utilisent)</li>
         <li><i class="fa-li fa fa-caret-right"></i> Applications mobiles</li>
         <li><i class="fa-li fa fa-caret-right"></i> Côté serveur (NodeJS)</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Arrivée de NativeJS</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Explosion des frameworks web (Angular, React...)</li>
       </ul>
     </section>
 
     <section>
-      <h3>Les "GAFA" sont arrivés...</h3>
-      <img src="./images/grumpy-facebook.png" alt=""/>
-    </section>
-    <section>
-      <!-- TODO Remplacer par Google Inbox ? -->
-      <img src="./images/gmail.png" alt=""/>
+      <section>
+        <h3>Les "GAFA" sont arrivés...</h3>
+        <img src="./images/grumpy-facebook.png" alt="Facebook"/>
+      </section>
+      <section>
+        <img src="./images/gmail.png" alt="GMail"/>
+      </section>
     </section>
 
     <section>
@@ -135,7 +147,7 @@
         <li><i class="fa-li fa fa-caret-right"></i> Problématiques des <span class="important">réseaux mobiles</span>.</li>
       </ul>
     </section>
-    
+
     <section>
       <h3>Challenge: 100,000 lignes de JavaScript ?</h3>
       <img src="./images/peur.png" alt=""/>
@@ -328,63 +340,140 @@ counter.increment(); // 1 :(
     <section>
       <h3><span class="title-index">#1</span> Utiliser d'autres langages</h3>
       <ul class="fa-ul">
-        <li><i class="fa-li fa fa-caret-right"></i> Google Dart</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Coffee Script</li>
+        <li class="strike"><i class="fa-li fa fa-caret-right"></i> Google Dart</li>
+        <li class="strike"><i class="fa-li fa fa-caret-right"></i> Coffee Script</li>
         <li><i class="fa-li fa fa-caret-right"></i> ECMAScript 6 (2015)</li>
         <li><i class="fa-li fa fa-caret-right"></i> TypeScript</li>
       </ul>
     </section>
 
     <section>
-      <h3>ES6 / ES2015</h3>
-      <p>ECMAScript 6 est la nouvelle spécification du langage JavaScript</p>
-      <ul class="fa-ul">
-        <li><i class="fa-li fa fa-caret-right"></i> Définition des <code>class</code></li>
-        <li><i class="fa-li fa fa-caret-right"></i> Opérateur <code>=></code></li>
-        <li><i class="fa-li fa fa-caret-right"></i> Syntaxe <code>for ... of</code></li>
-        <li><i class="fa-li fa fa-caret-right"></i> Modules</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Promesses</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Structure de données</li>
-        <li><i class="fa-li fa fa-caret-right"></i> ...</li>
-      </ul>
-    </section>
-    <section>
-      <h3>Example ES6</h3>
-      <pre><code class="hljs" data-trim>
+      <section>
+        <h3>ES6 / ES2015</h3>
+        <p>ECMAScript 6 est la nouvelle spécification du langage JavaScript</p>
+      </section>
+
+      <section>
+        <h3>Principales évolutions</h3>
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-caret-right"></i> Définition des <code>class</code></li>
+          <li><i class="fa-li fa fa-caret-right"></i> Opérateur <code>=></code></li>
+          <li><i class="fa-li fa fa-caret-right"></i> Syntaxe <code>for ... of</code></li>
+          <li><i class="fa-li fa fa-caret-right"></i> Modules</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Promesses</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Structure de données</li>
+          <li><i class="fa-li fa fa-globe"></i> <a href="http://es6-features.org/">http://es6-features.org/</a></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Classe ES6</h3>
+        <pre><code class="hljs" data-trim>
 class Foo extends Bar {
-  constructor(name) {
-    this.name = name || 'World';
+  // constructeur
+  constructor(name = 'Sherlock Holmes') {
+    this._name = name;
+    // ES5: this._name = name || 'Sherlock Holmes';
   }
 
+  // getter - setter
+  get name() { return this._name; }
+  set name(name) { this._name = name; }
+
   welcome() {
-    return 'Hello ' + this.name;
+    let lower = this._name.toLowerCase();
+    return `Bonjour ${lower} !`;
+    // ES5: return 'Bonjour ' + this._name + ' !';
   }
 }
-      </code></pre>
-    </section>
-    <section>
-      <h3>Example ES6</h3>
-      <pre><code class="hljs" data-trim>
-var nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        </code></pre>
+      </section>
+      <section>
+        <h3>Classe ES6</h3>
+        <pre><code class="hljs" data-trim>
+class Foo extends Bar {
+  // Fonction statique
+  static defaultFoo() {
+    return new Foo('Dr. Watson');
+  }
+}
+
+let myFoo = Foo.defaultFoo();
+        </code></pre>
+      </section>
+
+      <section>
+        <h3>Opérateur <code>=&gt;</code></h3>
+        <pre><code class="hljs" data-trim>
+const nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 // ES6
-var pairs = nombres.filter(n => n % 2 === 0);
+let pairs = nombres.filter(n => n % 2 === 0);
 
 // ES5
 var pairs = nombres.filter(function(n) {
   return n % 2 === 0;
 });
-      </code></pre>
+        </code></pre>
+      </section>
+
+      <section>
+        <h3>Opérateur <code>=&gt;</code> et <code class="lower">this</code></h3>
+        <pre><code class="hljs" data-trim>
+// ES6
+this.nombres.forEach(n => {
+  this.maListe.push(n);
+});
+
+// ES5
+this.nombres.forEach(function(n) {
+  this.maListe.push(n);
+}.bind(this));
+// ou
+var self = this;
+this.nombres.forEach(function(n) {
+  self.maListe.push(n);
+});
+        </code></pre>
+      </section>
+
+      <section>
+        <h3><code class="lower">for of</code></h3>
+        <pre><code class="hljs" data-trim>
+const lettres = ['a', 'b', 'c', 'd', 'e'];
+
+for (var i = 0; i < lettres.length; i++) {
+  console.log('lettre ', lettres[i]);
+}
+
+for (let i in lettres) {
+  console.log('lettre ', i);
+  // console.log('lettre', lettres[i]);
+}
+// Affiche 'lettre 0', 'lettre 1', 'lettre 2', 'lettre 3', ...
+
+// ES6
+for (let lettre of lettres) {
+  console.log('lettre ', lettre);
+}
+// Affiche 'lettre a', 'lettre b', 'lettre c', 'lettre d', ...
+        </code></pre>
+      </section>
     </section>
 
-    <section>
-      <h3>TypeScript</h3>
-      <p>ES5 <i class="fa fa-caret-right"></i> ES6 <i class="fa fa-caret-right"></i> TypeScript</p>
-      <p>Apporte essentiellement le <strong>typage</strong>, les <strong>interfaces</strong> et les <strong>decorators</strong>.</p>
-    </section>
 
     <section>
-      <h3>Example TypeScript</h3>
-      <pre><code class="hljs" data-trim>
+      <section>
+        <h3>TypeScript</h3>
+        <ul class="fa fa-ul">
+          <li><i class="fa-li fa fa-caret-right"></i> ES5 <i class="fa fa-angle-right"></i> ES6 <i class="fa fa-angle-right"></i> TypeScript</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Apporte essentiellement le <strong>typage</strong>, les <strong>interfaces</strong> et les <strong>decorators</strong>.</li>
+          <li><i class="fa-li fa fa-windows"></i> Créé par Microsoft, popularisé par Angular 2.</li>
+          <li><i class="fa-li fa fa-globe"></i> <a href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>exemple TypeScript</h3>
+        <pre><code class="hljs" data-trim>
 interface ClockInterface {
   currentTime: Date;
   setTime(d: Date);
@@ -399,42 +488,51 @@ class Clock implements ClockInterface  {
     // ...
   }
 }
-      </code></pre>
+        </code></pre>
+      </section>
+
+      <section>
+          <h3>Decorators</h3>
+          <strong>TODO</strong>
+      </section>
     </section>
 
     <section>
-      <h3><span class="title-index">#2</span> Les architectures MV*</h3>
-      <p>Les nouveaux besoins imposent des changements d'architecture :</p>
-      <ul class="fragment2 fa-ul">
-        <li><i class="fa-li fa fa-clock-o"></i> Temps de réponse <span class="important">instantané</span></li>
-        <li><i class="fa-li fa fa-mobile"></i> Gestion des réseaux lents, aléatoires...</li>
-        <li><i class="fa-li fa fa-power-off"></i> Mode <span class="important">déconnecté</span></li>
-      </ul>
-      <p class="fragment">Les architectures <strong>SPA</strong> (<em>Single Page Application</em>)<br/> sont une solution.</p>
-    </section>
-    <section>
-      <h3>Architecture classique</h3>
-      <img src="./images/mvc1.png" alt="" class="no-border"/>
-    </section>
-    <section>
-      <h3>Architecture "SPA"</h3>
-      <img src="./images/mvc2.png" alt="" class="no-border"/>
+      <section>
+        <h3><span class="title-index">#2</span> Les architectures MV*</h3>
+        <p>Les nouveaux besoins imposent des changements d'architecture :</p>
+        <ul class="fragment2 fa-ul">
+          <li><i class="fa-li fa fa-clock-o"></i> Temps de réponse <span class="important">instantané</span></li>
+          <li><i class="fa-li fa fa-mobile"></i> Gestion des réseaux lents, aléatoires...</li>
+          <li><i class="fa-li fa fa-power-off"></i> Mode <span class="important">déconnecté</span></li>
+        </ul>
+        <p class="fragment">Les architectures <strong>SPA</strong> (<em>Single Page Application</em>)<br/> sont une solution.</p>
+      </section>
+      <section>
+        <h3>Architecture classique</h3>
+        <img src="./images/mvc1.png" alt="" class="no-border"/>
+      </section>
+      <section>
+        <h3>Architecture "SPA"</h3>
+        <img src="./images/mvc2.png" alt="" class="no-border"/>
+      </section>
     </section>
 
     <section>
-      <h3>AngularJS</h3>
-      <ul class="fa-ul">
-        <li><i class="fa-li fa fa-google"></i> Framework SPA par Google</li>
-        <li><i class="fa-li fa fa-object-group"></i> Découplage "MVC"</li>
-        <li><i class="fa-li fa fa-flask"></i> Complètement testable</li>
-        <li><i class="fa-li fa fa-arrows-h"></i> Double binding</li>
-        <li><i class="fa-li fa fa-codepen"></i> Directives</li>
-        <li><i class="fa-li fa fa-users"></i> Enorme communauté</li>
-      </ul>
-    </section>
-    <section>
-      <h3>Example AngularJS</h3>
-      <pre><code class="hljs" data-trim>
+      <section>
+        <h3>AngularJS</h3>
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-google"></i> Framework SPA par Google</li>
+          <li><i class="fa-li fa fa-object-group"></i> Découplage "MVC"</li>
+          <li><i class="fa-li fa fa-flask"></i> Complètement testable</li>
+          <li><i class="fa-li fa fa-arrows-h"></i> Double binding</li>
+          <li><i class="fa-li fa fa-codepen"></i> Directives</li>
+          <li><i class="fa-li fa fa-users"></i> Enorme communauté</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Example AngularJS</h3>
+        <pre><code class="hljs" data-trim>
 <html ng-app>
   <div ng-controller="TodoListController as ctrl">
     <span>{{ctrl.remaining()}} of {{ctrl.items.length}} remaining</span>
@@ -452,39 +550,41 @@ class Clock implements ClockInterface  {
     </form>
   </div>
 </html>
-      </code></pre>
-    </section>
-    <section>
-      <h3>Code JS</h3>
-      <pre><code class="hljs" data-trim>
+        </code></pre>
+      </section>
+      <section>
+        <h3>Code JS</h3>
+        <pre><code class="hljs" data-trim>
 angular.module('todoApp', [])
-  .controller('TodoListController', function() {
-    this.items = [{text:'Coder en JS', done: true}, ...];
+  .controller('TodoListController', TodoListController);
 
-    this.addItem = function() {
-      this.items.push({text: this.newItem, done: false});
-      this.newItem = '';
-    }.bind(this);
+function TodoListController() {
+  this.items = [{text:'Coder en JS', done: true}, ...];
+  this.addItem = () => {
+    this.items.push({text: this.newItem, done: false});
+    this.newItem = '';
+  };
 
-    this.remaining = function() {
-      var count = 0;
-      angular.forEach(this.items, function(todo) {
-        count += todo.done ? 0 : 1;
-      });
-      return count;
-    }.bind(this);
-  });
-      </code></pre>
+  this.remaining = () => {
+    let count = 0;
+    angular.forEach(this.items, todo => {
+      count += todo.done ? 0 : 1;
+    });
+    return count;
+  };
+});
+        </code></pre>
+      </section>
     </section>
 
     <section>
-      <h3>Angular 2</h3>
+      <h3>Angular <span class="strike">2</span></h3>
       <ul class="fa-ul">
-        <li><i class="fa-li fa fa-caret-right"></i> Nouvelle version d'Angular 2.</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Nouvelle version d'Angular.</li>
         <li><i class="fa-li fa fa-caret-right"></i> Concepts de la v1 abandonnés.</li>
         <li><i class="fa-li fa fa-caret-right"></i> Basé sur les <code>Components</code>.</li>
         <li><i class="fa-li fa fa-caret-right"></i> Ecrit en TypeScript.</li>
-        <li><i class="fa-li fa fa-question-circle"></i> Bêta en novembre, stable en mars.</li>
+        <li><i class="fa-li fa fa-warning"></i> Manque de maturité.</li>
       </ul>
     </section>
     <section>
@@ -542,60 +642,65 @@ bootstrap(AppComponent);
         <li><i class="fa-li fa fa-caret-right"></i> Isolation du code.</li>
         <li><i class="fa-li fa fa-caret-right"></i> Faible couplage.</li>
         <li><i class="fa-li fa fa-caret-right"></i> Présentation d'une interface.</li>
+        <li><i class="fa-li fa fa-caret-right"></i> Profiter des modules ES6 / TS.</li>
       </ul>
     </section>
 
     <section>
-      <h3><span class="title-index">#4</span> Analyser son code</h3>
-      <ul class="fa-ul">
-        <li><i class="fa-li fa fa-caret-right"></i> Être capable de détecter des <span class="important">parties sales</span>.</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Limiter les <span class="important">erreurs</span> de développements.</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Forcer les <span class="important">bonnes pratiques</span>.</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Intégration dans les IDE pour des retours immédiats.</li>
-      </ul>
+      <section>
+        <h3><span class="title-index">#4</span> Analyser son code</h3>
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-caret-right"></i> Être capable de détecter des <span class="important">parties sales</span>.</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Limiter les <span class="important">erreurs</span> de développements.</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Forcer les <span class="important">bonnes pratiques</span>.</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Intégration dans les IDE pour des retours immédiats.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Les outils</h3>
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-caret-right"></i> ES5 : JsHint, JsLint, Jscs</li>
+          <li><i class="fa-li fa fa-caret-right"></i> ES6 : ESLint</li>
+          <li><i class="fa-li fa fa-caret-right"></i> TS : TSLint</li>
+          <li><i class="fa-li fa fa-caret-right"></i> SonarQube</li>
+        </ul>
+      </section>
     </section>
 
-    <section>
-      <h3>Les outils</h3>
-      <ul class="fa-ul">
-        <li><i class="fa-li fa fa-caret-right"></i> JsHint</li>
-        <li><i class="fa-li fa fa-caret-right"></i> JsLint</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Jscs</li>
-        <li><i class="fa-li fa fa-caret-right"></i> SonarQube</li>
-      </ul>
-    </section>
 
     <section>
-      <h3><span class="title-index">#5</span> Rendre son code expressif</h3>
-      <p>Un code expressif c'est un code :</p>
-      <ul class="fa-ul">
-        <li><i class="fa-li fa fa-caret-right"></i> simple</li>
-        <li><i class="fa-li fa fa-caret-right"></i> concis</li>
-        <li><i class="fa-li fa fa-caret-right"></i> lisible</li>
-      </ul>
-    </section>
+      <section>
+        <h3><span class="title-index">#5</span> Rendre son code expressif</h3>
+        <p>Un code expressif c'est un code :</p>
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-caret-right"></i> simple</li>
+          <li><i class="fa-li fa fa-caret-right"></i> concis</li>
+          <li><i class="fa-li fa fa-caret-right"></i> lisible</li>
+        </ul>
+      </section>
 
-    <section>
-      <h3>Sans jQuery</h3>
-      <pre><code class="hljs" data-trim>
-<form onsubmit="return checkForm();">...</form>
+      <section>
+        <h3>Sans jQuery</h3>
+        <pre><code class="hljs" data-trim>
+  <form onsubmit="return checkForm();">...</form>
 
-  <script type="text/javascript">
-    function checkForm() {
-      var beerName = document.getElementById('beer_name').value;
-      if (beerName === '') {
-        document.getElementById('beer_name').className += 'invalid';
-        document.getElementById('error_box').style.display = 'block';
-        return false;
+    <script type="text/javascript">
+      function checkForm() {
+        var beerName = document.getElementById('beer_name').value;
+        if (beerName === '') {
+          document.getElementById('beer_name').className += 'invalid';
+          document.getElementById('error_box').style.display = 'block';
+          return false;
+        }
+        return true;
       }
-      return true;
-    }
-  </script>
-      </code></pre>
-    </section>
-    <section>
-      <h3>Avec jQuery</h3>
-      <pre><code class="hljs" data-trim>
+    </script>
+        </code></pre>
+      </section>
+      <section>
+        <h3>Avec jQuery</h3>
+        <pre><code class="hljs" data-trim>
 $('#beerForm').submit(function() {
   if ($('#beer_name').val() === '') {
     $('#beer_name').addClass('invalid');
@@ -604,96 +709,114 @@ $('#beerForm').submit(function() {
   }
   return true;
 });
-        </code></pre>
+          </code></pre>
+      </section>
+
+      <section>
+        <p>Plus généralement, adoptez la <strong>clean code</strong> attitude !</p>
+      </section>
+
+      <section>
+        <h3>N'oubliez pas !</h3>
+        <blockquote class="fragment">
+          "Codez comme si la personne qui devait maintenir votre code était un dangereux psychopathe qui connait votre adresse."
+        </blockquote>
+        <blockquote class="fragment">"Ou pire, cela peut être vous dans 6 mois !"</blockquote>
+      </section>
     </section>
 
     <section>
-      <h3>N'oubliez pas !</h3>
-      <blockquote class="fragment">
-        "Codez comme si la personne qui devait maintenir votre code était un dangereux psychopathe qui connait votre adresse."
-      </blockquote>
-      <blockquote class="fragment">"Ou pire, cela peut être vous dans 6 mois !"</blockquote>
-    </section>
+      <section>
+        <h3><span class="title-index">#6</span> Tester</h3>
+        <blockquote>
+          "Le seul code qui ne contient pas de bug est celui que l'on n'écrit pas !"
+        </blockquote>
+      </section>
 
-    <section>
-      <h3><span class="title-index">#6</span> Tester</h3>
-      <blockquote>
-        "Le seul code qui ne contient pas de bug est celui que l'on n'a pas écrit !"
-      </blockquote>
-    </section>
+      <section>
+        <h3>Les tests unitaires</h3>
+        <p>
+          Le test <span class="red">unitaire</span> est là pour s'assurer qu'un bout de code, isolé du reste, fait ce pour quoi il a été écrit.
+        </p>
+        <p class="fragment">Un bon test unitaire est :</p>
+        <ul class="fragment fa-ul">
+          <li><i class="fa-li fa fa-caret-right"></i> Rapide</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Isolé</li>
+          <li><i class="fa-li fa fa-caret-right"></i> "Fragile"</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Compréhensible</li>
+        </ul>
+      </section>
 
-    <section>
-      <h3>Les tests unitaires</h3>
-      <p>
-        Le test <span class="red">unitaire</span> est là pour s'assurer qu'un bout de code, isolé du reste, fait ce pour quoi il a été écrit.
-      </p>
-      <p class="fragment">Un bon test unitaire est :</p>
-      <ul class="fragment fa-ul">
-        <li><i class="fa-li fa fa-caret-right"></i> Rapide</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Isolé</li>
-        <li><i class="fa-li fa fa-caret-right"></i> "Fragile"</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Compréhensible</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Exemple d'un test unitaire</h3>
-      <pre><code class="hljs" data-trim>
-describe("Testing _ lib", function() {
-  beforeEach(function() {
+      <section>
+        <h3>Exemple d'un test unitaire</h3>
+        <pre><code class="hljs" data-trim>
+describe("Testing _ lib", () => {
+  beforeEach(() => {
     // To do before every test
   });
 
-  it("should be 42", function() {
-    var res = _.last([1, 2, 3, 42]);
+  it("should be 42", () => {
+    let res = _.last([1, 2, 3, 42]);
     expect(res).toBe(42);
   });
 
-  it("should not be 1", function() {
-    var res = _.max([1, 2, 3]);
+  it("should not be 1", () => {
+    let res = _.max([1, 2, 3]);
     expect(res).not.toBe(1);
   });
 });
-      </code></pre>
-    </section>
-
-    <section>
-      <h3>Les tests d'intégration (e2e)</h3>
-      <p>
-        Les tests d'intégration (<em>End To End</em>) visent à tester une application de <span class="important">bout en bout</span>.
-        Nous utilisons des "robots" (Selenium...) qui <em>simulent</em> des actions et vérifient un certain nombre de choses.
-      </p>
-    </section>
-    <section>
-      <h3>Exemple de test e2e</h3>
-      <pre><code class="hljs" data-trim>
-describe('angularjs homepage todo list', function() {
-  it('should add a todo', function() {
+        </code></pre>
+      </section>
+      <section>
+        <h3>Les tests d'intégration (e2e)</h3>
+        <p>
+          Les tests d'intégration (<em>End To End</em>) visent à tester une application de <span class="important">bout en bout</span>.
+          Nous utilisons des "robots" (Selenium...) qui <em>simulent</em> des actions et vérifient un certain nombre de choses.
+        </p>
+      </section>
+      <section>
+        <h3>Exemple de test e2e</h3>
+        <pre><code class="hljs" data-trim>
+describe('angularjs homepage todo list', () => {
+  it('should add a todo', () => {
     browser.get('https://angularjs.org');
 
     element(by.model('todoList.todoText')).sendKeys('write first protractor test');
     element(by.css('[value="add"]')).click();
 
-    var todoList = element.all(by.repeater('todo in todoList.todos'));
+    let todoList = element.all(by.repeater('todo in todoList.todos'));
     expect(todoList.count()).toEqual(3);
     expect(todoList.get(2).getText()).toEqual('write first protractor test');
 
     // You wrote your first test, cross it off the list
     todoList.get(2).element(by.css('input')).click();
-    var completedAmount = element.all(by.css('.done-true'));
+    let completedAmount = element.all(by.css('.done-true'));
     expect(completedAmount.count()).toEqual(2);
   });
 });
-      </code></pre>
+        </code></pre>
+      </section>
+
+      <section>
+        <h3>Le principe du TDD</h3>
+        <p>
+          Le TDD, <em>Test Driven Development</em> pousse à écrire les tests <span class="important">avant</span> le code.
+        </p>
+        <img src="./images/tdd.gif" alt=""/>
+      </section>
+
+      <section>
+        <h3>A propos des outils</h3>
+        <ul class="fa-ul">
+          <li>Test <i class="fa fa-caret-right"></i> Jasmine, Mocha</li>
+          <li>e2e <i class="fa fa-caret-right"></i> Protractor, WebDriverIO, Nightwatch, Browserstack</strong></li>
+          <li>BDD | acceptance <i class="fa fa-caret-right"></i> Codecept, CucumberJS</li>
+          <li>Style <i class="fa fa-caret-right"></i> Chai, Sinon</li>
+          <li>Autres <i class="fa fa-caret-right"></i> Karma</li>
+        </ul>
+      </section>
     </section>
 
-    <section>
-      <h3>Le principe du TDD</h3>
-      <p>
-        Le TDD, <em>Test Driven Development</em> pousse à écrire les tests <span class="important">avant</span> le code.
-      </p>
-      <img src="./images/tdd.gif" alt=""/>
-    </section>
 
     <section>
       <h3><span class="title-index">#7</span> L'automatisation</h3>
@@ -710,19 +833,23 @@ describe('angularjs homepage todo list', function() {
     </section>
 
     <section>
-      <h3><span class="title-index">#8</span> Utiliser les bons outils</h3>
-      <img src="./images/wheels.png" alt=""/>
-    </section>
-    
-    <section>
-      <h3>IntelliJ / WebStorm</h3>
-      <img src="./images/intellij.jpg" alt=""/>
+      <section>
+        <h3><span class="title-index">#8</span> Utiliser les bons outils</h3>
+        <img src="./images/wheels.png" alt=""/>
+      </section>
+
+      <section>
+        <h3>IntelliJ / WebStorm</h3>
+        <img src="./images/intellij.jpg" alt=""/>
+      </section>
+
+      <section>
+        <h3>Chrome Devtools</h3>
+        <img src="./images/chrome-devtools.png" alt=""/>
+      </section>
     </section>
 
-    <section>
-      <h3>Chrome Devtools</h3>
-      <img src="./images/chrome-devtools.png" alt=""/>
-    </section>
+
 
     <section>
       <h1>Conclusion</h1>
