@@ -1,0 +1,26 @@
+{
+  "name": "linsolas-presentations",
+  "version": "1.0.0",
+  "description": "Presentations made by Romain Linsolas (FR & EN)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linsolas/presentations.git"
+  },
+  "keywords": [
+    "presentations",
+    "revealjs"
+  ],
+  "author": "Romain Linsolas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linsolas/presentations/issues"
+  },
+  "homepage": "https://github.com/linsolas/presentations#readme",
+  "devDependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}
