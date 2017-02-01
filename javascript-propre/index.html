@@ -119,12 +119,16 @@
       </section>
     </section>
 
-    <section>
-      <h2>Pourquoi cette présentation ?</h2>
-    </section>
 
     <section>
-			<pre><code class="hljs" data-trim>
+      <section data-background="images/devoxx-france.jpg">
+        <div class="blur-more">
+          <h2>Pourquoi cette présentation ?</h2>
+        </div>
+      </section>
+
+      <section>
+  			<pre><code class="hljs" data-trim>
 <div id="error_box" style="display: none" class="error">Please fill-in beer name</div>
 <form id="beerForm" action="addBeer.do" method="POST" onsubmit="return checkForm()">
   <label for="beer_name">Beer name:</label>
@@ -143,30 +147,32 @@
     return true;
   }
 &lt;/script&gt;
-      </code></pre>
-      <hr/>
-      <div class="super-box">
-        <div class="box">
-          <label for="beer_name">Beer name:</label>
-          <br>
-          <input name="name" id="beer_name">
-          <br>
-          <input type="submit" value="Add">
+        </code></pre>
+        <hr/>
+        <div class="super-box">
+          <div class="box">
+            <label for="beer_name">Beer name:</label>
+            <br>
+            <input name="name" id="beer_name">
+            <br>
+            <input type="submit" value="Add">
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <h3>Le JavaScript est <span class="important">partout</span> !</h3>
-      <ul class="fa-ul">
-        <li><i class="fa-li fa fa-caret-right"></i> Runtime le plus distribué (+90% des sites l'utilisent)</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Applications mobiles</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Côté serveur (NodeJS)</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Explosion des frameworks web (Angular, React...)</li>
-      </ul>
-    </section>
+      <section>
+        <h3>Le JavaScript est <span class="important">partout</span> !</h3>
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-caret-right"></i> Runtime le plus distribué (94,4%<small>1</small> des sites l'utilisent)</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Applications mobiles</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Côté serveur (NodeJS)</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Explosion des frameworks web (Angular, React...)</li>
+        </ul>
+        <div class="source">
+          <sup>1</sup> <a href="https://w3techs.com/technologies/details/cp-javascript/all/all" target="_blank">https://w3techs.com/technologies/details/cp-javascript/all/all</a>
+        </div>
+      </section>
 
-    <section>
       <section>
         <h3>Les "GAFA" sont arrivés...</h3>
         <img src="./images/grumpy-facebook.png" alt="Facebook"/>
@@ -174,20 +180,21 @@
       <section>
         <img src="./images/gmail.png" alt="GMail"/>
       </section>
+
+      <section>
+        <h3>De nouveaux besoins</h3>
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-caret-right"></i> Les utilisateurs veulent des applications <span class="important">réactives</span>, vivantes et dynamiques.</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Enjeu important de la qualité.</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Problématiques des <span class="important">réseaux mobiles</span>.</li>
+        </ul>
+      </section>
     </section>
 
-    <section>
-      <h3>De nouveaux besoins</h3>
-      <ul class="fa-ul">
-        <li><i class="fa-li fa fa-caret-right"></i> Les utilisateurs veulent des applications <span class="important">réactives</span>, vivantes et dynamiques.</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Enjeu important de la qualité.</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Problématiques des <span class="important">réseaux mobiles</span>.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Challenge: 100,000 lignes de JavaScript ?</h3>
-      <img src="./images/peur.png" alt=""/>
+    <section data-background="images/peur.png">
+      <div class="blur-more">
+        <h3>Challenge : coder 100,000 lignes de JavaScript ?</h3>
+      </div>
     </section>
 
     <section>
@@ -196,91 +203,94 @@
     </section>
 
     <section>
-      <h3>Petit jeu...</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Code</th>
-            <th></th>
-            <th>Résultat</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code id="code1">[] + []</code></td>
-            <td><button class="btn" onclick="game(1)"><i class="fa fa-arrow-right"></i></button></td>
-            <td class="right"><code id="res1"></code></td>
-          </tr>
-          <tr class="fragment">
-            <td><code id="code2">[] + {}</code></td>
-            <td><button class="btn" onclick="game(2)"><i class="fa fa-arrow-right"></i></button></td>
-            <td class="right"><code id="res2"></code></td>
-          </tr>
-          <tr class="fragment">
-            <td><code id="code3">{} + []</code></td>
-            <td><button class="btn" onclick="game(3)"><i class="fa fa-arrow-right"></i></button></td>
-            <td class="right"><code id="res3"></code></td>
-          </tr>
-          <tr class="fragment">
-            <td><code id="code4">{} + {}</code></td>
-            <td><button class="btn" onclick="game(4)"><i class="fa fa-arrow-right"></i></button></td>
-            <td class="right"><code id="res4"></code></td>
-          </tr>
-          <tr class="fragment">
-            <td><code id="code5">++[[]][+[]]+[+[]] === "10"</code></td>
-            <td><button class="btn" onclick="game(5)"><i class="fa fa-arrow-right"></i></button></td>
-            <td class="right"><code id="res5"></code></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+      <section>
+        <h3>Petit jeu...</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th></th>
+              <th>Résultat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code id="code1">[] + []</code></td>
+              <td><button class="btn" onclick="game(1)"><i class="fa fa-arrow-right"></i></button></td>
+              <td class="right"><code id="res1"></code></td>
+            </tr>
+            <tr class="fragment">
+              <td><code id="code2">[] + {}</code></td>
+              <td><button class="btn" onclick="game(2)"><i class="fa fa-arrow-right"></i></button></td>
+              <td class="right"><code id="res2"></code></td>
+            </tr>
+            <tr class="fragment">
+              <td><code id="code3">{} + []</code></td>
+              <td><button class="btn" onclick="game(3)"><i class="fa fa-arrow-right"></i></button></td>
+              <td class="right"><code id="res3"></code></td>
+            </tr>
+            <tr class="fragment">
+              <td><code id="code4">{} + {}</code></td>
+              <td><button class="btn" onclick="game(4)"><i class="fa fa-arrow-right"></i></button></td>
+              <td class="right"><code id="res4"></code></td>
+            </tr>
+            <tr class="fragment">
+              <td><code id="code5">++[[]][+[]]+[+[]] === '10'</code></td>
+              <td><button class="btn" onclick="game(5)"><i class="fa fa-arrow-right"></i></button></td>
+              <td class="right"><code id="res5"></code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-    <script>
-      function game(index) {
-        var code = document.querySelector('#code' + index).innerHTML;
-        var res = eval(code);
-        if (res === '') {
-          res = '""';
+      <script>
+        function game(index) {
+          var code = document.querySelector('#code' + index).innerHTML;
+          var res = eval(code);
+          if (res === '') {
+            res = '""';
+          }
+          document.querySelector('#res' + index).innerHTML = res;
         }
-        document.querySelector('#res' + index).innerHTML = res;
-      }
-    </script>
+      </script>
 
-    <section data-background="./images/darth-vader.png" data-background-size="500px">
-      <h1 class="red">WTF?</h1>
-      <h1>&nbsp;</h1>
-      <h1>&nbsp;</h1>
+      <section data-background="./images/darth-vader.png" data-background-size="500px">
+        <h1 class="red">WTF?</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+      </section>
     </section>
 
     <section>
-      <h3>Autre problème</h3>
-      <pre><code class="hljs" data-trim>
+      <section>
+        <h3>Autre problème</h3>
+        <pre><code class="hljs" data-trim>
 function updateVAT() {
   var price = document.getElementById("price").value;
   return price + (price * 0.196);
 }
-      </code></pre>
-      <div class="super-box">
-        <div class="box">
-          <div>
-            <label for="price">Price:</label>
-            <input type="text" id="price" onchange="calculateTva()" style="font-size: 15px;"/>
-            <hr/>
-            Prix avec TVA: <strong><span id="price-res"></span>€</strong>
+        </code></pre>
+        <div class="super-box">
+          <div class="box">
+            <div>
+              <label for="price">Price:</label>
+              <input type="text" id="price" onchange="calculateTva()" style="font-size: 15px;"/>
+              <hr/>
+              Prix avec TVA: <strong><span id="price-res"></span>€</strong>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <script>
-      function calculateTva() {
-        var p = document.querySelector('#price').value;
-        document.querySelector('#price-res').innerHTML = p + (p * 0.196);
-      }
-    </script>
+      </section>
+      <script>
+        function calculateTva() {
+          var p = document.querySelector('#price').value;
+          document.querySelector('#price-res').innerHTML = p + (p * 0.196);
+        }
+      </script>
 
-    <section>
-      <h3>Pollution de l'espace de nommage</h3>
-      <pre><code class="hljs" data-trim>
+      <section>
+        <h3>Pollution de l'espace de nommage</h3>
+        <pre><code class="hljs" data-trim>
 // beers.js
 function checkForm() {
   var beerName = document.forms["beerForm"]["name"].value;
@@ -300,12 +310,12 @@ function checkForm() {
   }
   return true;
 }
-      </code></pre>
-    </section>
+        </code></pre>
+      </section>
 
-    <section>
-      <h3>Scope global par défaut</h3>
-      <pre><code class="hljs" data-trim>
+      <section>
+        <h3>Scope global par défaut</h3>
+        <pre><code class="hljs" data-trim>
 function subLoop() {
   for (i = 0; i < 10; i++) {
     console.log(i);
@@ -315,32 +325,32 @@ function subLoop() {
 for (var i = 0; i < 10; i++) {
   subLoop();
 }
-      </code></pre>
-      <hr/>
-      <button class="btn" onclick="testLoop()"><i class="fa fa-play"></i> Test</button>
-      <br/>
-      Résultat: <code id="loop-res"></code>
-    </section>
-    <script>
-      function testLoop() {
-        var code = document.getElementById('loop-res');
-        var suffix = '';
-        function subLoop() {
-          for (ii = 0; ii < 10; ii++) {
-            code.innerHTML += suffix + ii;
-            suffix = ' | ';
+        </code></pre>
+        <hr/>
+        <button class="btn" onclick="testLoop()"><i class="fa fa-play"></i> Test</button>
+        <br/>
+        Résultat: <code id="loop-res"></code>
+      </section>
+      <script>
+        function testLoop() {
+          var code = document.getElementById('loop-res');
+          var suffix = '';
+          function subLoop() {
+            for (ii = 0; ii < 10; ii++) {
+              code.innerHTML += suffix + ii;
+              suffix = ' | ';
+            }
+          }
+
+          for (var ii = 0; ii < 10; ii++) {
+            subLoop();
           }
         }
+      </script>
 
-        for (var ii = 0; ii < 10; ii++) {
-          subLoop();
-        }
-      }
-    </script>
-
-    <section>
-      <h3>Tout est public par défaut !</h3>
-      <pre><code class="hljs" data-trim>
+      <section>
+        <h3>Tout est public par défaut !</h3>
+        <pre><code class="hljs" data-trim>
 var counter = {
   privateValue: 0,
   increment: function() {
@@ -353,11 +363,14 @@ var counter = {
 counter.increment(); // 1
 counter.privateValue = 0;
 counter.increment(); // 1 :(
-      </code></pre>
+        </code></pre>
+      </section>
     </section>
 
-    <section>
-      <h2>Comment coder proprement 100,000 lignes de JS ?</h2>
+    <section data-background="images/enigma.jpg">
+      <div class="blur-more">
+        <h2>Comment coder proprement 100,000 lignes de JS ?</h2>
+      </div>
     </section>
 
     <section data-background="../images/plouf.gif">
@@ -399,7 +412,7 @@ counter.increment(); // 1 :(
           <li><i class="fa-li fa fa-caret-right"></i> Modules</li>
           <li><i class="fa-li fa fa-caret-right"></i> Promesses</li>
           <li><i class="fa-li fa fa-caret-right"></i> Structure de données</li>
-          <li><i class="fa-li fa fa-globe"></i> <a href="http://es6-features.org/">http://es6-features.org/</a></li>
+          <li><i class="fa-li fa fa-globe"></i> <a target="_blank" href="http://es6-features.org/">http://es6-features.org/</a></li>
         </ul>
       </section>
       <section>
@@ -504,7 +517,7 @@ for (let lettre of lettres) {
           <li><i class="fa-li fa fa-caret-right"></i> ES5 <i class="fa fa-angle-right"></i> ES6 <i class="fa fa-angle-right"></i> TypeScript</li>
           <li><i class="fa-li fa fa-caret-right"></i> Apporte essentiellement le <strong>typage</strong>, les <strong>interfaces</strong> et les <strong>decorators</strong>.</li>
           <li><i class="fa-li fa fa-windows"></i> Créé par Microsoft, popularisé par Angular 2.</li>
-          <li><i class="fa-li fa fa-globe"></i> <a href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a></li>
+          <li><i class="fa-li fa fa-globe"></i> <a target="_blank" href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a></li>
         </ul>
       </section>
 
@@ -530,8 +543,16 @@ class Clock implements ClockInterface  {
 
       <section>
           <h3>Decorators</h3>
-          <strong>TODO</strong>
-      </section>
+          <pre><code class="hljs" data-trim>
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'my-app',
+  template: `&lt;h1&gt;Hello {{name}}&lt;/h1&gt;`
+})
+export class AppComponent { name = 'Angular'; }
+          </code></pre>
+        </section>
     </section>
 
     <section>
@@ -563,12 +584,13 @@ class Clock implements ClockInterface  {
           <li><i class="fa-li fa fa-object-group"></i> Découplage "MVC"</li>
           <li><i class="fa-li fa fa-flask"></i> Complètement testable</li>
           <li><i class="fa-li fa fa-arrows-h"></i> Double binding</li>
-          <li><i class="fa-li fa fa-codepen"></i> Directives</li>
+          <li><i class="fa-li fa fa-code"></i> Directives</li>
           <li><i class="fa-li fa fa-users"></i> Enorme communauté</li>
+          <li><i class="fa-li fa fa-heartbeat"></i> Remplacé par Angular</li>
         </ul>
       </section>
       <section>
-        <h3>Example AngularJS</h3>
+        <h3>Côté HTML (vue)</h3>
         <pre><code class="hljs" data-trim>
 <html ng-app>
   <div ng-controller="TodoListController as ctrl">
@@ -590,7 +612,7 @@ class Clock implements ClockInterface  {
         </code></pre>
       </section>
       <section>
-        <h3>Code JS</h3>
+        <h3>Côté JS (contrôleur)</h3>
         <pre><code class="hljs" data-trim>
 angular.module('todoApp', [])
   .controller('TodoListController', TodoListController);
@@ -603,11 +625,9 @@ function TodoListController() {
   };
 
   this.remaining = () => {
-    let count = 0;
-    angular.forEach(this.items, todo => {
-      count += todo.done ? 0 : 1;
-    });
-    return count;
+    return this.items.reduce((sum, item) => {
+      return sum + (item.done ? 0 : 1);
+    }, 0);
   };
 });
         </code></pre>

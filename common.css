@@ -53,17 +53,20 @@ i.fa-facebook, i.fa-facebook-official {
   background-color: rgba(0, 0, 0, .66);
 }
 
-.credits {
-  position: absolute ;
+.credits, .source {
+  position: absolute;
   bottom: 0;
   left: 0;
   font-size: 12px !important;
 }
-.credits.right {
+.source {
+  font-size: inherit;
+}
+.source.right, .credits.right {
   right: 0;
 }
 
-.credits a {
+.source a, .credits a {
   color: #ccc;
 }
 .credits a:before {
