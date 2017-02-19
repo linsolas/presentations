@@ -45,15 +45,20 @@
 
   <!-- Any section element inside of this container is displayed as a slide -->
   <div class="slides">
-    <section>
-      <h3>Coder proprement en JavaScript ?</h3>
-      <br>
-      <h4>Challenge accepted!</h4>
-      <hr/>
-      <p>
-        <small>par <a href="http://linsolas.github.io">Romain Linsolas</a> | <a href="http://twitter.com/romaintaz">@romaintaz</a>
-        </small>
-      </p>
+    <section data-background="images/js-animation.gif">
+      <div class="blur-more">
+        <h3>Coder proprement en JavaScript ?</h3>
+        <br>
+        <h4>Challenge accepted!</h4>
+        <hr/>
+        <p>
+          <small>par <a href="http://linsolas.github.io">Romain Linsolas</a> | <a href="http://twitter.com/romaintaz">@romaintaz</a>
+          </small>
+        </p>
+      </div>
+      <div class="credits">
+        <a href="http://www.jstips.co/">JS Tips</a>
+      </div>
     </section>
 
     <section data-background="../images/devoxx-2013.jpg">
@@ -75,16 +80,18 @@
         <img src="../images/ezweb-showcase.png">
       </section>
 
-      <section>
-        <h3>EzWeb c'est...</h3>
-        <ul class="fa fa-ul">
-          <li><i class="fa fa-google"></i> Écosystème basé sur AngularJS</li>
-          <li><i class="fa fa-twitter"></i> Bootstrap "SG"</li>
-          <li><i class="fa fa-map-signs"></i> Conventions fortes</li>
-          <li><i class="fa fa-wrench"></i> Outils pré-configurés</li>
-          <li><i class="fa fa-table"></i> Composants avancés</li>
-          <li><i class="fa fa-ambulance"></i> Support et évolutions</li>
-        </ul>
+      <section data-background="images/angularjs.jpg">
+        <div class="blur">
+          <h3>EzWeb c'est...</h3>
+          <ul class="fa fa-ul">
+            <li><i class="fa fa-google"></i> Écosystème basé sur AngularJS</li>
+            <li><i class="fa fa-twitter"></i> Bootstrap "SG"</li>
+            <li><i class="fa fa-map-signs"></i> Conventions fortes</li>
+            <li><i class="fa fa-wrench"></i> Outils pré-configurés</li>
+            <li><i class="fa fa-table"></i> Composants avancés</li>
+            <li><i class="fa fa-ambulance"></i> Support et évolutions</li>
+          </ul>
+        </div>
       </section>
       <section data-background="../images/numbers.jpg">
         <h3>Des ch1ffr35 !</h3>
@@ -421,18 +428,19 @@ counter.increment(); // 1 :(
 class Foo extends Bar {
   // constructeur
   constructor(name = 'Sherlock Holmes') {
+    super();
     this._name = name;
     // ES5: this._name = name || 'Sherlock Holmes';
   }
 
-  // getter - setter
-  get name() { return this._name; }
-  set name(name) { this._name = name; }
+  get name() { return this._name; } // let myName = myFoo.name;
+  set name(name) { this._name = name; } // myFoo.name = 'Dr. Watson';
 
   welcome() {
     let lower = this._name.toLowerCase();
-    return `Bonjour ${lower} !`;
-    // ES5: return 'Bonjour ' + this._name + ' !';
+    return `Bonjour
+            ${lower} !`;
+    // ES5: return 'Bonjour \n' + lower + ' !';
   }
 }
         </code></pre>
@@ -586,28 +594,28 @@ export class AppComponent { name = 'Angular'; }
           <li><i class="fa-li fa fa-arrows-h"></i> Double binding</li>
           <li><i class="fa-li fa fa-code"></i> Directives</li>
           <li><i class="fa-li fa fa-users"></i> Enorme communauté</li>
-          <li><i class="fa-li fa fa-heartbeat"></i> Remplacé par Angular</li>
+          <li><i class="fa-li fa fa-heartbeat"></i> Remplacé par Angular ("<em>tout court</em>")</li>
         </ul>
       </section>
       <section>
         <h3>Côté HTML (vue)</h3>
         <pre><code class="hljs" data-trim>
 <html ng-app>
-  <div ng-controller="TodoListController as ctrl">
-    <span>{{ctrl.remaining()}} of {{ctrl.items.length}} remaining</span>
-    <!-- Liste des éléments -->
-    <ul>
-      <li ng-repeat="item in ctrl.items">
-        <input type="checkbox" ng-model="item.done">
-        <span>{{item.text}}</span>
-      </li>
-    </ul>
-    <!-- Ajout d'un élément -->
-    <form ng-submit="ctrl.addItem()">
-      <input type="text" ng-model="ctrl.newItem">
-      <input class="btn-primary" type="submit" value="add">
-    </form>
-  </div>
+<div ng-controller="TodoListController as ctrl">
+  <span>{{ctrl.remaining()}} of {{ctrl.items.length}} remaining</span>
+  <!-- Liste des éléments -->
+  <ul>
+    <li ng-repeat="item in ctrl.items">
+      <input type="checkbox" ng-model="item.done">
+      <span>{{item.text}}</span>
+    </li>
+  </ul>
+  <!-- Ajout d'un élément -->
+  <form ng-submit="ctrl.addItem()">
+    <input type="text" ng-model="ctrl.newItem">
+    <input class="btn-primary" type="submit" value="add">
+  </form>
+</div>
 </html>
         </code></pre>
       </section>
@@ -635,62 +643,91 @@ function TodoListController() {
     </section>
 
     <section>
-      <h3>Angular <span class="strike">2</span></h3>
-      <ul class="fa-ul">
-        <li><i class="fa-li fa fa-caret-right"></i> Nouvelle version d'Angular.</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Concepts de la v1 abandonnés.</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Basé sur les <code>Components</code>.</li>
-        <li><i class="fa-li fa fa-caret-right"></i> Ecrit en TypeScript.</li>
-        <li><i class="fa-li fa fa-warning"></i> Manque de maturité.</li>
-      </ul>
-    </section>
-    <section>
-      <h3>Example Angular 2</h3>
-      <pre><code class="hljs" data-trim>
-import {bootstrap, Component, FORM_DIRECTIVES} from 'angular2/angular2';
+      <section>
+        <h3>Angular <span class="strike">2</span></h3>
+        <ul class="fa-ul">
+          <li><i class="fa-li fa fa-caret-right"></i> Nouvelle version d'Angular.</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Concepts de la v1 abandonnés.</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Basé sur les <code>Components</code>.</li>
+          <li><i class="fa-li fa fa-caret-right"></i> Ecrit en TypeScript.</li>
+          <li><i class="fa-li fa fa-calendar"></i> Nouveau rythme de releases.</li>
+          <li><i class="fa-li fa fa-warning"></i> Manque de maturité.</li>
+        </ul>
+      </section>
 
-class Hero {id: number; name: string;}
+      <section>
+        <h3>Côté HTML</h3>
+        <pre><code class="hljs" data-trim>
+&lt;head&gt;
+  &lt;script&gt;
+    System.import('main.js')
+      .catch(err => console.error(err));
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;my-app&gt;Loading AppComponent content here ...&lt;/my-app&gt;
+&lt;/body&gt;
+        </code></pre>
+      </section>
+
+      <section>
+        <h3>Côté TypeScript (composant)</h3>
+        <pre><code class="hljs" data-trim>
+// app.component.ts
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template:`
-    <h1>{{title}}</h1>
-    <h2>{{hero.name}} details!</h2>
-    <div><label>id: </label>{{hero.id}}</div>
-    <div>
-      <label>name: </label>
-      <div><input [(ng-model)]="hero.name" placeholder="name"></div>
-    </div>
-    `,
-  directives: [FORM_DIRECTIVES]
+  template: `<h1>Hello {{name}}</h1>`
 })
-class AppComponent {
-  public title = 'Tour of Heroes';
-  public hero: Hero = {
-    id: 1,
-    name: 'Windstorm'
-  };
+export class AppComponent {
+  name = 'Angular';
 }
+        </code></pre>
+      </section>
+      <section>
+        <h3>Côté TypeScript (module)</h3>
+        <pre><code class="hljs" data-trim>
+// app.module.ts
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent }  from './app.component';
 
-bootstrap(AppComponent);
-      </code></pre>
+@NgModule({
+  imports:      [ BrowserModule ],
+  declarations: [ AppComponent ],
+  bootstrap:    [ AppComponent ]
+})
+export class AppModule { }
+        </code></pre>
+      </section>
+      <section>
+        <h3>Côté TypeScript (application)</h3>
+        <pre><code class="hljs" data-trim>
+// main.ts
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule }              from './app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+        </code></pre>
+      </section>
     </section>
+
     <section>
-      <h3>Côté HTML</h3>
-      <pre><code class="hljs" data-trim>
-&lt;script&gt;
-  System.config({
-    transpiler: 'typescript',
-    typescriptOptions: { emitDecoratorMetadata: true }
-  });
-  System.import('./app.ts');
-&lt;/script&gt;
-<div>
-  <my-app>loading...</my-app>
-</div>
-      </code></pre>
+      <section>
+        <h3>D'autres concurrents...</h3>
+      </section>
+      <section>
+        <h3><i class="fa fa-facebook-official"></i> React</h3>
+        <p><a href="https://facebook.github.io/react/">https://facebook.github.io/react/</a></p>
+        <img src="images/react.png" alt="React" style="height: 50vh;">
+      </section>
+      <section>
+        <h3>VueJS</h3>
+        <p><a href="https://vuejs.org/">https://vuejs.org/</a></p>
+        <img src="images/vuejs.png" alt="VueJS" style="height: 50vh;">
+      </section>
     </section>
-
 
     <section>
       <h3><span class="title-index">#3</span> Modulariser</h3>
@@ -758,7 +795,7 @@ bootstrap(AppComponent);
       <section>
         <h3>Avec jQuery</h3>
         <pre><code class="hljs" data-trim>
-$('#beerForm').submit(function() {
+$('#beerForm').submit(() => {
   if ($('#beer_name').val() === '') {
     $('#beer_name').addClass('invalid');
     $('#error_box').show();
