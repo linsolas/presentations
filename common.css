@@ -28,11 +28,8 @@ ul.fa-ul > li > i.fa:first-of-type:not(.fa-twitter):not(.fa-facebook-official) {
   color: #999;
 }
 
-.important, .very-important {
+.important {
   color: #f17100;
-}
-.very-important {
-  font-weight: bold !important;
 }
 
 i.fa-twitter {
