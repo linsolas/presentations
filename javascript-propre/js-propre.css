@@ -27,3 +27,11 @@
 .title-index {
   color: #e60028;
 }
+
+.reveal pre {
+  width: 100%;
+}
+.reveal pre code {
+  overflow: inherit;
+  max-height: inherit;
+}
