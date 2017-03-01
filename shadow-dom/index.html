@@ -15,6 +15,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
   <link rel="stylesheet" href="../revealjs/css/reveal.css">
   <link rel="stylesheet" href="../revealjs/css/theme/romain.css" id="theme">
 
@@ -74,24 +76,61 @@
 
     <section>
       <h3>Shadow <span class="important">DOM</span>?</h3>
+      <p><em>Document Object Model</em></p>
     </section>
 
     <section>
-      <h3>Les spécifications Web Components</h3>
-      <ul class="fa fa-ul">
-        <li><i class="fa fa-html5"></i> HTML Templates</li>
-        <li><i class="fa fa-code"></i> Custom Elements</li>
-        <li><i class="fa fa-cloud-download"></i> HTML Imports</li>
-        <li><i class="fa fa-snapchat-ghost"></i> <span class="important">Shadow DOM</span></li>
+      <h3>Le but ?</h3>
+      <h5 class="fragment">L'encapsulation</h5>
+      <ul class="fa fa-ul fragment">
+        <li><i class="fa fa-caret-right"></i> DOM <i class="fa fa-arrow-right"></i> composant</li>
+        <li><i class="fa fa-caret-right"></i> DOM <i class="fa fa-arrow-left"></i> composant</li>
       </ul>
     </section>
 
     <section>
-      <h3>Quel but ?</h3>
+      <h3>Les spécifications Web Components</h3>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="box">
+            <h3><i class="fa fa-html5"></i></h3>
+            <p>HTML Templates</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="box">
+            <h3><i class="fa fa-code"></i></h3>
+            <p>Custom Elements</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="box">
+            <h3><i class="fa fa-cloud-download"></i></h3>
+            <p>HTML Imports</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="box fragment grow">
+            <h3><i class="fa fa-snapchat-ghost"></i></h3>
+            <p class="">Shadow DOM</p>
+          </div>
+        </div>
+      </div>
     </section>
 
+
     <section>
-      <h3>API JavaScript</h3>
+      <h3>Création</h3>
+      <pre><code>
+let root = document.querySelector('#root')
+
+root.attachShadow({mode: 'open'});
+
+let div = document.createElement('div');
+div.innerHTML = 'A shadow DOM box...';
+root.appendChild(div);
+      </code></pre>
     </section>
 
     <section>

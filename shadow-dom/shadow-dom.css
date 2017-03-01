@@ -1,0 +1,9 @@
+.box {
+  border: solid 1px lightgray !important;
+  border-radius: 5px;
+  margin: 10px !important;
+  padding: 10px !important;
+}
+.box.important {
+  border: solid 1px #f17100 !important;
+}
