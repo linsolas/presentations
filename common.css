@@ -24,6 +24,9 @@ ul.fa-ul {
   list-style: none !important;
 }
 
+ul.fa-ul > li > i.fa:first-of-type {
+  min-width: 50px;
+}
 ul.fa-ul > li > i.fa:first-of-type:not(.fa-twitter):not(.fa-facebook-official) {
   color: #999;
 }
