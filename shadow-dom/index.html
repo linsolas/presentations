@@ -39,140 +39,30 @@
   <!--[if lt IE 9]>
   <script src="lib/js/html5shiv.js"></script>
   <![endif]-->
+
+  <link rel="import" href="partials/01-intro.html" role="slide">
+  <link rel="import" href="partials/02-but.html" role="slide">
+  <link rel="import" href="partials/03-specifications.html" role="slide">
+  <link rel="import" href="partials/04-polyfill.html" role="slide">
+  <link rel="import" href="partials/05-api.html" role="slide">
+  <link rel="import" href="partials/06-polymer.html" role="slide">
+  <link rel="import" href="partials/07-pour-contre.html" role="slide">
+  <link rel="import" href="partials/08-conclusion.html" role="slide">
 </head>
 
 <body>
 
 <div class="reveal">
 
-  <!-- Any section element inside of this container is displayed as a slide -->
-  <div class="slides">
-    <section data-background="images/js-animation.gif">
-      <div class="blur-more">
-        <h3>Le Shadow DOM pour les nuls</h3>
-        <hr/>
-        <p>
-          <small>par <a href="http://linsolas.github.io">Romain Linsolas</a> | <a href="http://twitter.com/romaintaz">@romaintaz</a>
-          </small>
-        </p>
-      </div>
-      <div class="credits">
-
-      </div>
-    </section>
-
-    <section data-background="../images/devoxx-2013.jpg">
-      <h2>Romain Linsolas</h2>
-      <br>
-      <div class="blur">
-        <ul class="fa-ul">
-          <li><i class="fa-li fa fa-caret-right"></i> Développeur Java &amp; web</li>
-          <li><i class="fa-li fa fa-caret-right"></i> Leader technique équipe front SG</li>
-          <li><i class="fa-li fa fa-caret-right"></i> Tout un tas d'autres choses...</li>
-          <li><i class="fa-li fa fa-twitter"></i> @romaintaz</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h3>Shadow <span class="important">DOM</span>?</h3>
-      <p><em>Document Object Model</em></p>
-    </section>
-
-    <section>
-      <h3>Le but ?</h3>
-      <h5 class="fragment">L'encapsulation</h5>
-      <ul class="fa fa-ul fragment">
-        <li><i class="fa fa-caret-right"></i> DOM <i class="fa fa-arrow-right"></i> composant</li>
-        <li><i class="fa fa-caret-right"></i> DOM <i class="fa fa-arrow-left"></i> composant</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>Les spécifications Web Components</h3>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="box">
-            <h3><i class="fa fa-html5"></i></h3>
-            <p>HTML Templates</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="box">
-            <h3><i class="fa fa-code"></i></h3>
-            <p>Custom Elements</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="box">
-            <h3><i class="fa fa-cloud-download"></i></h3>
-            <p>HTML Imports</p>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="box fragment grow">
-            <h3><i class="fa fa-snapchat-ghost"></i></h3>
-            <p class="">Shadow DOM</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section>
-      <h3>Création</h3>
-      <pre><code>
-let root = document.querySelector('#root')
-
-root.attachShadow({mode: 'open'});
-
-let div = document.createElement('div');
-div.innerHTML = 'A shadow DOM box...';
-root.appendChild(div);
-      </code></pre>
-    </section>
-
-    <section>
-      <h3>Le ShadowDOM dans la vraie vie</h3>
-    </section>
-
-    <section>
-      <h3>Les avantages</h3>
-    </section>
-
-    <section>
-      <h3>Les inconvénients</h3>
-    </section>
-
-    <section>
-      <h3>Le Shadow DOM et <strike>IE6</strike> les navigateurs</h3>
-      <p>
-        <i class="fa fa-globe"></i> <a href="http://caniuse.com/#feat=shadowdomv1" target="_blank">http://caniuse.com/#feat=shadowdomv1</a>
-      </p>
-    </section>
-
-    <section>
-      <h1><i class="fa fa-comments"></i></h1>
-      <h2>Questions</h2>
-    </section>
-
-    <!--<section>-->
-    <!--<h2>Speaker View</h2>-->
-    <!--<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>-->
-    <!--<p>Press the <em>S</em> key to try it out.</p>-->
-
-    <!--<section>-->
-    <!--<h2>Export to PDF</h2>-->
-    <!--<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>-->
-    <!--<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>-->
-    <!--</section>-->
-
+  <!-- ...SLIDES... -->
+  <div class="slides" id="slides">
   </div>
 
 </div>
 
 <script src="../revealjs/lib/js/head.min.js"></script>
+<script src="../lib/HTMLImports.min.js"></script>
+<script src="../revealjs/multi-files-plugin.js"></script>
 <script src="../revealjs/js/reveal.js"></script>
 
 <script>
