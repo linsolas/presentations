@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <title>ShadowDOM test</title>
+</head>
+<body>
+  <style>
+    .red {
+      border: solid 2px red;
+    }
+    .box {
+      height: 100px;
+      width: 100px;
+    }
+  </style>
+
+  <div class="red box">
+    A classic red DIV...
+  </div>
+  <hr>
+  <div id="root">
+
+  </div>
+
+  <script>
+    let root = document.querySelector('#root')
+
+    root.attachShadow({mode: 'open'});
+    let div = document.createElement('div');
+    div.innerHTML = 'A shadow DOM box...';
+    root.appendChild(div);
+  </script>
+
+</body>
+</html>

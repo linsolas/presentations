@@ -1,0 +1,187 @@
+<section class="partial">
+  <h3><span class="title-index">#1</span> Utiliser d'autres langages</h3>
+  <ul class="fa-ul">
+    <li class="strike"><i class="fa-li fa fa-caret-right"></i> Google Dart</li>
+    <li class="strike"><i class="fa-li fa fa-caret-right"></i> Coffee Script</li>
+    <li><i class="fa-li fa fa-caret-right"></i> ECMAScript 6 (2015)</li>
+    <li><i class="fa-li fa fa-caret-right"></i> TypeScript</li>
+  </ul>
+</section>
+
+<section class="partial">
+  <section>
+    <h3>ES6 / ES2015</h3>
+    <p>ECMAScript 6 est la nouvelle spécification du langage JavaScript</p>
+  </section>
+
+  <section>
+    <h3>Principales évolutions</h3>
+    <ul class="fa-ul">
+      <li><i class="fa-li fa fa-caret-right"></i> Définition des <code>class</code></li>
+      <li><i class="fa-li fa fa-caret-right"></i> Opérateur <code>=></code></li>
+      <li><i class="fa-li fa fa-caret-right"></i> Syntaxe <code>for ... of</code></li>
+      <li><i class="fa-li fa fa-caret-right"></i> Modules</li>
+      <li><i class="fa-li fa fa-caret-right"></i> Promesses</li>
+      <li><i class="fa-li fa fa-caret-right"></i> Structure de données</li>
+      <li><i class="fa-li fa fa-globe"></i> <a target="_blank" href="http://es6-features.org/">http://es6-features.org/</a></li>
+    </ul>
+  </section>
+  <section>
+    <h3>Classe ES6</h3>
+    <pre><code class="hljs" data-trim>
+class Foo extends Bar {
+// constructeur
+constructor(name = 'Sherlock Holmes') {
+super();
+this._name = name;
+// ES5: this._name = name || 'Sherlock Holmes';
+}
+
+get name() { return this._name; } // let myName = myFoo.name;
+set name(name) { this._name = name; } // myFoo.name = 'Dr. Watson';
+
+welcome() {
+let lower = this._name.toLowerCase();
+return `Bonjour
+        ${lower} !`;
+// ES5: return 'Bonjour \n' + lower + ' !';
+}
+}
+    </code></pre>
+  </section>
+  <section>
+    <h3>Classe ES6</h3>
+    <pre><code class="hljs" data-trim>
+class Foo extends Bar {
+// Fonction statique
+static defaultFoo() {
+return new Foo('Dr. Watson');
+}
+}
+
+let myFoo = Foo.defaultFoo();
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Opérateur <code>=&gt;</code></h3>
+    <pre><code class="hljs" data-trim>
+const nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// ES6
+let pairs = nombres.filter(n => n % 2 === 0);
+
+// ES5
+var pairs = nombres.filter(function(n) {
+return n % 2 === 0;
+});
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Opérateur <code>=&gt;</code> et <code>this</code></h3>
+    <pre><code class="hljs" data-trim>
+// ES6
+this.nombres.forEach(n => {
+this.maListe.push(n);
+});
+
+// ES5
+this.nombres.forEach(function(n) {
+this.maListe.push(n);
+}.bind(this));
+// ou
+var self = this;
+this.nombres.forEach(function(n) {
+self.maListe.push(n);
+});
+    </code></pre>
+  </section>
+
+  <section>
+    <h3><code>for of</code></h3>
+    <pre><code class="hljs" data-trim>
+const lettres = ['a', 'b', 'c', 'd', 'e'];
+
+for (var i = 0; i < lettres.length; i++) {
+console.log('lettre ', lettres[i]);
+}
+
+for (let i in lettres) {
+console.log('lettre ', i);
+// console.log('lettre', lettres[i]);
+}
+// Affiche 'lettre 0', 'lettre 1', 'lettre 2', 'lettre 3', ...
+
+// ES6
+for (let lettre of lettres) {
+console.log('lettre ', lettre);
+}
+// Affiche 'lettre a', 'lettre b', 'lettre c', 'lettre d', ...
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>ES 2016</h3>
+    <ul class="fa-ul">
+      <li><i class="fa-li fa fa-caret-right"></i> <span class="important">Cycle annuel</span> !</li>
+      <li><i class="fa-li fa fa-caret-right"></i> opérateur <code>**</code></li>
+      <li><i class="fa-li fa fa-caret-right"></i> <code>Array.prototype.includes()</code></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>ES 2017</h3>
+    <ul class="fa-ul">
+      <li><i class="fa-li fa fa-caret-right"></i> <code>async</code> &amp; <code>await</code></li>
+      <li><i class="fa-li fa fa-caret-right"></i> <code>Object.entries()</code> et <code>Object.values()</code></li>
+      <li><i class="fa-li fa fa-caret-right"></i> <code>String.padStart()</code> et <code>String.padEnd()</code></li>
+      <li><i class="fa-li fa fa-caret-right"></i> <code>Object.getOwnPropertyDescriptors()</code></li>
+      <li><i class="fa-li fa fa-globe"></i> <a href="http://kangax.github.io/compat-table/es2016plus/" target="_blank">Tableau de compatibilité</a></li>
+    </ul>
+  </section>
+</section>
+
+<section class="partial">
+  <section>
+    <h3>TypeScript</h3>
+    <ul class="fa fa-ul">
+      <li><i class="fa-li fa fa-caret-right"></i> ES5 <i class="fa fa-angle-right"></i> ES6 <i class="fa fa-angle-right"></i> TypeScript</li>
+      <li><i class="fa-li fa fa-caret-right"></i> Apporte essentiellement le <span class="important">typage</span>, les <span class="important">interfaces</span> et les <span class="important">decorators</span>.</li>
+      <li><i class="fa-li fa fa-windows"></i> Créé par Microsoft, popularisé par Angular 2.</li>
+      <li><i class="fa-li fa fa-globe"></i> <a target="_blank" href="https://www.typescriptlang.org/">https://www.typescriptlang.org/</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>exemple TypeScript</h3>
+    <pre><code class="hljs" data-trim>
+interface ClockInterface {
+currentTime: Date;
+setTime(d: Date);
+}
+
+class Clock implements ClockInterface  {
+currentTime: Date;
+setTime(d: Date) {
+this.currentTime = d;
+}
+constructor(h: number, m: number) {
+// ...
+}
+}
+    </code></pre>
+  </section>
+
+  <section>
+      <h3>Decorators</h3>
+      <pre><code class="hljs" data-trim>
+import { Component } from '@angular/core';
+
+@Component({
+selector: 'my-app',
+template: `&lt;h1&gt;Hello {{name}}&lt;/h1&gt;`
+})
+export class AppComponent { name = 'Angular'; }
+      </code></pre>
+    </section>
+</section>

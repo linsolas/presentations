@@ -1,0 +1,91 @@
+<section class="partial">
+  <section>
+    <h3><span class="title-index">#6</span> Tester</h3>
+    <blockquote>
+      "Le seul code qui ne contient pas de bug est celui que l'on n'écrit pas !"
+    </blockquote>
+  </section>
+
+  <section>
+    <h3>Les tests unitaires</h3>
+    <p>
+      Le test <span class="important">unitaire</span> est là pour s'assurer qu'un bout de code, isolé du reste, fait ce pour quoi il a été écrit.
+    </p>
+    <p class="fragment">Un bon test unitaire est :</p>
+    <ul class="fragment fa-ul">
+      <li><i class="fa-li fa fa-caret-right"></i> Rapide</li>
+      <li><i class="fa-li fa fa-caret-right"></i> Isolé</li>
+      <li><i class="fa-li fa fa-caret-right"></i> "Fragile"</li>
+      <li><i class="fa-li fa fa-caret-right"></i> Compréhensible</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Exemple d'un test unitaire</h3>
+    <pre><code class="hljs" data-trim>
+describe("Testing _ lib", () => {
+beforeEach(() => {
+// To do before every test
+});
+
+it("should be 42", () => {
+let res = _.last([1, 2, 3, 42]);
+expect(res).toBe(42);
+});
+
+it("should not be 1", () => {
+let res = _.max([1, 2, 3]);
+expect(res).not.toBe(1);
+});
+});
+    </code></pre>
+  </section>
+  <section>
+    <h3>Les tests d'intégration (e2e)</h3>
+    <p>
+      Les tests d'intégration (<em>End To End</em>) visent à tester une application de <span class="important">bout en bout</span>.
+      Nous utilisons des "robots" (Selenium...) qui <em>simulent</em> des actions et vérifient un certain nombre de choses.
+    </p>
+  </section>
+  <section>
+    <h3>Exemple de test e2e</h3>
+    <pre><code class="hljs" data-trim>
+describe('angularjs homepage todo list', () => {
+it('should add a todo', () => {
+browser.get('https://angularjs.org');
+
+element(by.model('todoList.todoText')).sendKeys('write first protractor test');
+element(by.css('[value="add"]')).click();
+
+let todoList = element.all(by.repeater('todo in todoList.todos'));
+expect(todoList.count()).toEqual(3);
+expect(todoList.get(2).getText()).toEqual('write first protractor test');
+
+// You wrote your first test, cross it off the list
+todoList.get(2).element(by.css('input')).click();
+let completedAmount = element.all(by.css('.done-true'));
+expect(completedAmount.count()).toEqual(2);
+});
+});
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Le principe du TDD</h3>
+    <p>
+      Le TDD, <em>Test Driven Development</em> pousse à écrire les tests <span class="important">avant</span> le code.
+    </p>
+    <img src="./images/tdd.gif" alt=""/>
+  </section>
+
+  <section>
+    <h3>A propos des outils</h3>
+    <ul class="fa-ul">
+      <li>Test <i class="fa fa-caret-right"></i> Jasmine, Mocha</li>
+      <li>e2e <i class="fa fa-caret-right"></i> Protractor, WebDriverIO, Nightwatch, Browserstack</strong></li>
+      <li>BDD | acceptance <i class="fa fa-caret-right"></i> Codecept, CucumberJS</li>
+      <li>Style <i class="fa fa-caret-right"></i> Chai, Sinon</li>
+      <li>Autres <i class="fa fa-caret-right"></i> Karma</li>
+    </ul>
+  </section>
+</section>

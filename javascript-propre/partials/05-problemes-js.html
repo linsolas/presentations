@@ -1,0 +1,105 @@
+<section class="partial">
+  <section>
+    <h3>Autre problème</h3>
+    <pre><code class="hljs" data-trim>
+function updateVAT() {
+var price = document.getElementById("price").value;
+return price + (price * 0.196);
+}
+    </code></pre>
+    <div class="super-box">
+      <div class="box">
+        <div>
+          <label for="price">Price:</label>
+          <input type="text" id="price" onchange="calculateTva()" style="font-size: 15px;"/>
+          <hr/>
+          Prix avec TVA: <strong><span id="price-res"></span>€</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function calculateTva() {
+      var p = document.querySelector('#price').value;
+      document.querySelector('#price-res').innerHTML = p + (p * 0.196);
+    }
+  </script>
+
+  <section>
+    <h3>Pollution de l'espace de nommage</h3>
+    <pre><code class="hljs" data-trim>
+// beers.js
+function checkForm() {
+var beerName = document.forms["beerForm"]["name"].value;
+if (beerName == '') {
+document.getElementById("name_field").className += "invalid";
+return false;
+}
+return true;
+}
+
+// sodas.js
+function checkForm() {
+var sodaName = document.forms["sodaForm"]["name"].value;
+if (sodaName == '') {
+document.getElementById("name_field").className += "invalid";
+return false;
+}
+return true;
+}
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>Scope global par défaut</h3>
+    <pre><code class="hljs" data-trim>
+function subLoop() {
+for (i = 0; i < 10; i++) {
+console.log(i);
+}
+}
+
+for (var i = 0; i < 10; i++) {
+subLoop();
+}
+    </code></pre>
+    <hr/>
+    <button class="btn" onclick="testLoop()"><i class="fa fa-play"></i> Test</button>
+    <br/>
+    Résultat: <code id="loop-res"></code>
+  </section>
+  <script>
+    function testLoop() {
+      var code = document.getElementById('loop-res');
+      var suffix = '';
+      function subLoop() {
+        for (ii = 0; ii < 10; ii++) {
+          code.innerHTML += suffix + ii;
+          suffix = ' | ';
+        }
+      }
+
+      for (var ii = 0; ii < 10; ii++) {
+        subLoop();
+      }
+    }
+  </script>
+
+  <section>
+    <h3>Tout est public par défaut !</h3>
+    <pre><code class="hljs" data-trim>
+var counter = {
+privateValue: 0,
+increment: function() {
+counter.privateValue++;
+return counter.privateValue;
+}
+};
+
+// ailleurs dans le code...
+counter.increment(); // 1
+counter.privateValue = 0;
+counter.increment(); // 1 :(
+    </code></pre>
+  </section>
+</section>

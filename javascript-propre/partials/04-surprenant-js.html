@@ -1,0 +1,69 @@
+<section data-background="images/peur.png" class="partial">
+  <div class="blur-more">
+    <h3>Challenge : coder 100,000 lignes de JavaScript ?</h3>
+  </div>
+</section>
+
+<section class="partial">
+  <h3>Le JavaScript c'est <span class="fragment fade-out">sale</span><span class="fragment">surprenant</span></h3>
+  <img src="./images/js-sale.png" alt=""/>
+</section>
+
+<section class="partial">
+  <section>
+    <h3>Petit jeu...</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th></th>
+          <th>Résultat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code id="code1">[] + []</code></td>
+          <td><button class="btn" onclick="game(1)"><i class="fa fa-arrow-right"></i></button></td>
+          <td class="right"><code id="res1"></code></td>
+        </tr>
+        <tr class="fragment">
+          <td><code id="code2">[] + {}</code></td>
+          <td><button class="btn" onclick="game(2)"><i class="fa fa-arrow-right"></i></button></td>
+          <td class="right"><code id="res2"></code></td>
+        </tr>
+        <tr class="fragment">
+          <td><code id="code3">{} + []</code></td>
+          <td><button class="btn" onclick="game(3)"><i class="fa fa-arrow-right"></i></button></td>
+          <td class="right"><code id="res3"></code></td>
+        </tr>
+        <tr class="fragment">
+          <td><code id="code4">{} + {}</code></td>
+          <td><button class="btn" onclick="game(4)"><i class="fa fa-arrow-right"></i></button></td>
+          <td class="right"><code id="res4"></code></td>
+        </tr>
+        <tr class="fragment">
+          <td><code id="code5">++[[]][+[]]+[+[]] === '10'</code></td>
+          <td><button class="btn" onclick="game(5)"><i class="fa fa-arrow-right"></i></button></td>
+          <td class="right"><code id="res5"></code></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <script>
+    function game(index) {
+      var code = document.querySelector('#code' + index).innerHTML;
+      var res = eval(code);
+      if (res === '') {
+        res = '""';
+      }
+      document.querySelector('#res' + index).innerHTML = res;
+    }
+  </script>
+
+  <section data-background="./images/darth-vader.png" data-background-size="500px">
+    <h1 class="red">WTF?</h1>
+    <h1>&nbsp;</h1>
+    <h1>&nbsp;</h1>
+  </section>
+</section>

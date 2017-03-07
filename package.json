@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/linsolas/presentations#readme",
   "devDependencies": {
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "live-server": "^1.2.0",
+    "reveal.js": "^3.4.1",
+    "webcomponents.js": "^0.7.24"
   }
 }

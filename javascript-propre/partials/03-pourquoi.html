@@ -1,0 +1,70 @@
+<section class="partial">
+  <section data-background="images/devoxx-france.jpg">
+    <div class="blur-more">
+      <h2>Pourquoi cette présentation ?</h2>
+    </div>
+  </section>
+
+  <section>
+    <pre><code class="hljs" data-trim>
+<div id="error_box" style="display: none" class="error">Please fill-in beer name</div>
+<form id="beerForm" action="addBeer.do" method="POST" onsubmit="return checkForm()">
+<label for="beer_name">Beer name:</label>
+<input name="name" id="beer_name">
+<input type="submit" value="Add">
+</form>
+
+&lt;script type="application/javascript"&gt;
+function checkForm() {
+var beerName = document.getElementById("beer_name").value;
+if (beerName == '') {
+  document.getElementById("beer_name").className += " invalid";
+  document.getElementById("error_box").style.display = "block";
+  return false;
+}
+return true;
+}
+&lt;/script&gt;
+    </code></pre>
+    <hr/>
+    <div class="super-box">
+      <div class="box">
+        <label for="beer_name">Beer name:</label>
+        <br>
+        <input name="name" id="beer_name">
+        <br>
+        <input type="submit" value="Add">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Le JavaScript est <span class="important">partout</span> !</h3>
+    <ul class="fa-ul">
+      <li><i class="fa-li fa fa-caret-right"></i> Runtime le plus distribué (<span class="important">94,4%</span><small>1</small> des sites l'utilisent)</li>
+      <li><i class="fa-li fa fa-caret-right"></i> Applications mobiles</li>
+      <li><i class="fa-li fa fa-caret-right"></i> Côté serveur (<span class="important">NodeJS</span>)</li>
+      <li><i class="fa-li fa fa-caret-right"></i> Explosion des frameworks web (Angular, Backbone, etc.)</li>
+    </ul>
+    <div class="source">
+      <sup>1</sup> <a href="https://w3techs.com/technologies/details/cp-javascript/all/all" target="_blank">https://w3techs.com/technologies/details/cp-javascript/all/all</a>
+    </div>
+  </section>
+
+  <section>
+    <h3>Les "GAFA" sont arrivés...</h3>
+    <img src="./images/grumpy-facebook.png" alt="Facebook"/>
+  </section>
+  <section>
+    <img src="./images/gmail.png" alt="GMail"/>
+  </section>
+
+  <section>
+    <h3>De nouveaux besoins</h3>
+    <ul class="fa-ul">
+      <li><i class="fa-li fa fa-caret-right"></i> Les utilisateurs veulent des applications <span class="important">réactives</span>, vivantes et dynamiques.</li>
+      <li><i class="fa-li fa fa-caret-right"></i> Enjeu important de la <span class="important">qualité</span>.</li>
+      <li><i class="fa-li fa fa-caret-right"></i> Problématiques des <span class="important">réseaux mobiles</span>.</li>
+    </ul>
+  </section>
+</section>

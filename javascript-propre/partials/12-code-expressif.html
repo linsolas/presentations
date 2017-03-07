@@ -1,0 +1,55 @@
+<section class="partial">
+  <section>
+    <h3><span class="title-index">#5</span> Rendre son code expressif</h3>
+    <p>Un code expressif c'est un code :</p>
+    <ul class="fa-ul">
+      <li><i class="fa-li fa fa-caret-right"></i> simple</li>
+      <li><i class="fa-li fa fa-caret-right"></i> concis</li>
+      <li><i class="fa-li fa fa-caret-right"></i> lisible</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Sans jQuery</h3>
+    <pre><code class="hljs" data-trim>
+<form onsubmit="return checkForm();">...</form>
+
+<script type="text/javascript">
+  function checkForm() {
+    var beerName = document.getElementById('beer_name').value;
+    if (beerName === '') {
+      document.getElementById('beer_name').className += 'invalid';
+      document.getElementById('error_box').style.display = 'block';
+      return false;
+    }
+    return true;
+  }
+</script>
+    </code></pre>
+  </section>
+  <section>
+    <h3>Avec jQuery</h3>
+    <pre><code class="hljs" data-trim>
+$('#beerForm').submit(() => {
+if ($('#beer_name').val() === '') {
+$('#beer_name').addClass('invalid');
+$('#error_box').show();
+return false;
+}
+return true;
+});
+      </code></pre>
+  </section>
+
+  <section>
+    <p>Plus généralement, adoptez la <strong>clean code</strong> attitude !</p>
+  </section>
+
+  <section>
+    <h3>N'oubliez pas !</h3>
+    <blockquote class="fragment">
+      "Codez comme si la personne qui devait maintenir votre code était un dangereux psychopathe qui connait votre adresse."
+    </blockquote>
+    <blockquote class="fragment">"Ou pire, cela peut être vous dans 6 mois !"</blockquote>
+  </section>
+</section>
