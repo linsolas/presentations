@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <title>ShadowDOM test</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+  <style>
+    my-card {
+      margin-bottom: 20px;
+      --background-color: red;
+      --my-card-padding: 10px;
+    }
+  </style>
+  <div class="container">
+    <h1>Test</h1>
+    <hr>
+    <div class="card">
+      <div class="card-header">
+        Entête
+      </div>
+      <div class="card-block">
+        Corps
+      </div>
+    </div>
+
+    <hr>
+
+    <my-card>
+      <div slot="title">Head</div>
+      <div slot="body">
+        Body of card
+      </div>
+    </my-card>
+    <hr>
+  </div>
+
+
+
+  <script>
+    class MyCard extends HTMLElement {
+      constructor() {
+        super();
+        const shadowRoot = this.attachShadow({mode: 'open'});
+        shadowRoot.innerHTML = `
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+          <style>
+            :host {
+              display: inline-block;
+              width: 650px;
+              contain: content;
+
+              background: var(--background-color, #9E9E9E);
+              border-radius: 10px;
+              padding: var(--my-card-padding, 5px);
+            }
+            #title ::slotted(*) {
+              color: blue;
+            }
+          </style>
+
+          <div class="card">
+            <div id="title" class="card-header">
+              <slot name="title"></slot>
+            </div>
+            <div class="card-block">
+              <slot name="body"></slot>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    window.customElements.define('my-card', MyCard);
+  </script>
+</body>
+</html>

@@ -27,3 +27,29 @@ Exemple code
   - https://gist.github.com/ebidel/2d2bb0cdec3f2a16cf519dbaa791ce1b
 
 Light DOM -> partie du shadow DOM qui est laissée à l'utilisateur (ce que l'on va mettre dans les slots)
+
+La plupart des Events sont propagés dans le shadowDOM : hover, drag / drop events, keyboard / mouse events...
+
+Les événements customs ne sont pas propagés en dehors du shadow DOM, sauf si spécifié par "composed: true" :
+selectTab() {
+  const tabs = this.shadowRoot.querySelector('#tabs');
+  tabs.dispatchEvent(new Event('tab-select', {bubbles: true, composed: true}));
+}
+
+
+Certains styles sont hérités, pour les reset il faut faire "all: initial"
+
+```
+<style>
+  :host {
+    all: initial; /* 1st rule so subsequent properties are reset. */
+  }
+</style>
+```
+
+Création du contenu par <template>
+https://developers.google.com/web/fundamentals/getting-started/primers/customelements
+
+
+CSS containment
+https://developers.google.com/web/updates/2016/06/css-containment
