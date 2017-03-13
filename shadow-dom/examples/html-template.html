@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <title>ShadowDOM test</title>
+
+  <!--
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  -->
+</head>
+<body>
+  <style>
+    xxxmy-card {
+      --background-color: red;
+      --my-card-padding: 10px;
+    }
+    .card {
+      width: 500px;
+    }
+    .card-header {
+      border: solid 1px #e0e0e0;
+      padding: 20px;
+    }
+    .card-block {
+      border: solid 1px #e0e0e0;
+      border-top: 0;
+      padding: 20px;
+    }
+  </style>
+  <div class="container">
+
+    <div class="card">
+      <div class="card-header">
+        <strong>Classique HTML</strong>
+      </div>
+      <div class="card-block">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </div>
+    </div>
+
+    <hr>
+
+    <my-card>
+      <div slot="title">
+        <strong>Web Component</strong>
+      </div>
+      <div slot="body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </div>
+    </my-card>
+    <hr>
+  </div>
+
+  <template id="my-card-template">
+    <style>
+      :host {
+        display: inline-block;
+        width: 500px;
+        contain: content;
+
+        /*
+        background: var(--background-color, #9E9E9E);
+        border-radius: 10px;
+        padding: var(--my-card-padding, 5px);
+        */
+      }
+      #title ::slotted(*) {
+        /*color: blue;*/
+      }
+
+      .card-header {
+        background-color: #f7f7f9;
+        border: solid 1px #e0e0e0;
+        border-radius: 5px 5px 0 0;
+        padding: 20px;
+      }
+      .card-block {
+        background-color: #fff;
+        border: solid 1px #e0e0e0;
+        border-top: 0;
+        border-radius: 0 0 5px 5px;
+        padding: 20px;
+      }
+      
+    </style>
+
+    <div class="card">
+      <div id="title" class="card-header">
+        <slot name="title"></slot>
+      </div>
+      <div class="card-block">
+        <slot name="body"></slot>
+      </div>
+    </div>
+  </template>
+
+
+  <script>
+    class MyCard extends HTMLElement {
+      constructor() {
+        super();
+        const shadowRoot = this.attachShadow({mode: 'open'});
+        const templ = document.querySelector('#my-card-template');
+        const instance = templ.content.cloneNode(true);
+        shadowRoot.appendChild(instance);
+      }
+    }
+
+    window.customElements.define('my-card', MyCard);
+  </script>
+</body>
+</html>
