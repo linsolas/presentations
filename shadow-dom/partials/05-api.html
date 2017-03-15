@@ -1,11 +1,11 @@
 <section class="partial">
   <section>
     <h3>Création</h3>
-    <pre><code>
+    <pre><code data-trim data-noescape>
 let root = document.querySelector('#root')
-
+<mark>
 root.attachShadow({mode: 'open'});
-
+</mark>
 let div = document.createElement('div');
 div.innerHTML = 'A shadow DOM box...';
 root.appendChild(div);
@@ -16,6 +16,6 @@ root.appendChild(div);
   </section>
 
   <section>
-
+    <h3>DEMO !</h3>
   </section>
 </section>

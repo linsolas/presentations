@@ -8,9 +8,24 @@
   border: solid 1px #f17100 !important;
 }
 
-/**************************/
-/* DEVOXX FRANCE TEMPLATE */
-/**************************/
+.white a {
+  color: #fff;
+}
+
+.up-vote {
+  color: #35bd5b !important;
+}
+.down-vote {
+  color: #f17100 !important;
+}
+
+/*******************************/
+/* DEVOXX FRANCE 2017 TEMPLATE */
+/*******************************/
+
+html body {
+  background-image:linear-gradient(#03002e, #057ffa);
+}
 
 .footer {
   position:absolute;
@@ -40,6 +55,7 @@
   right: 50%;
   width: 30px;
   text-align: center;
+  color: #999;
 }
 
 .reveal .controls {
