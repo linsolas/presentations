@@ -15,6 +15,43 @@ root.appendChild(div);
     </aside>
   </section>
 
+  <section>
+    <h3>Les &laquo; slots &raquo;</h3>
+    <p>
+      Fonctionnalité de <span class="important">composition</span> du shadow DOM.
+    </p>
+  </section>
+  <section>
+    <div class="row">
+      <div class="col-sm-6">
+        <h5>Web Component</h5>
+        <pre><code data-trim data-noescape class="html">
+&lt;div class="card"&gt;
+  &lt;div class="card-header"&gt;
+    <mark>&lt;slot name="title"&gt;&lt;/slot&gt;</mark>
+  &lt;/div&gt;
+  &lt;div class="card-block"&gt;
+    <mark>&lt;slot&gt;&lt;/slot&gt;</mark>
+  &lt;/div&gt;
+&lt;/div&gt;
+        </code></pre>
+      </div>
+      <div class="col-sm-6 fragment">
+        <h5>Code HTML</h5>
+        <pre><code data-trim data-noescape class="html">
+&lt;my-card&gt;
+  &lt;div <mark>slot="title"</mark>&gt;
+    &lt;strong&gt;Mon titre&lt;/strong&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    Lorem ipsum dolor sit amet...
+  &lt;/div&gt;
+&lt;/my-card&gt;
+        </code></pre>
+      </div>
+    </div>
+  </section>
+
   <section data-background="images/demo-monkey.gif">
     <h3>DEMO !</h3>
   </section>

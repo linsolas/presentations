@@ -44,7 +44,7 @@
       <div slot="title">
         <strong>Web Component</strong>
       </div>
-      <div slot="body">
+      <div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </div>
     </my-card>
@@ -81,7 +81,7 @@
         border-radius: 0 0 5px 5px;
         padding: 20px;
       }
-      
+
     </style>
 
     <div class="card">
@@ -89,7 +89,7 @@
         <slot name="title"></slot>
       </div>
       <div class="card-block">
-        <slot name="body"></slot>
+        <slot></slot>
       </div>
     </div>
   </template>
