@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <title>ShadowDOM Demo</title>
+</head>
+<body style="margin: 50px;">
+  <h2>5. Templatisation par les slots</h2>
+
+  <style>
+    .card { width: 400px; margin-bottom: 50px; }
+    .card-header { background-color: #283e4a; border: solid 1px #e0e0e0; color: #c7d1d8; padding: 20px; }
+    .card-block { border: solid 1px #e0e0e0; border-top: 0; padding: 20px; }
+  </style>
+
+  <div class="card">
+    <div class="card-header">
+      Classique HTML
+    </div>
+    <div class="card-block">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+  </div>
+
+  <my-card>
+    <div slot="title">
+      Web Component
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+  </my-card>
+
+
+  <template id="my-card-template">
+    <style>
+      .card { width: 400px; margin-bottom: 50px; }
+      .card-header { background-color: #e60028; border: solid 1px #e0e0e0; color: #fff; padding: 20px; }
+      .card-block { border: solid 1px #e0e0e0; border-top: 0; padding: 20px; }
+    </style>
+
+    <div class="card">
+      <div class="card-header">
+        <slot name="title">Default title</slot>
+      </div>
+      <div class="card-block">
+        <slot>Default block</slot>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    class MyCard extends HTMLElement {
+      constructor() {
+        super();
+        const templ = document.querySelector('#my-card-template');
+        const instance = templ.content.cloneNode(true);
+        let shadowRoot = this.attachShadow({mode: 'open'});
+        shadowRoot.appendChild(instance);
+      }
+    }
+    window.customElements.define('my-card', MyCard);
+  </script>
+
+  <a href="step-6.html" style="padding: 10px 16px;font-size: 12px;text-decoration: none;border-radius: 4px;color: #fff;background-color: #23558c;border-color: #23558c;right: 20px;bottom: 20px;position: absolute;" class="step">Next...</a>
+</body>
+</html>

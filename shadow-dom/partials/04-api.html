@@ -1,7 +1,7 @@
 <section class="partial">
   <section>
     <h3>Création</h3>
-    <pre><code data-trim data-noescape>
+    <pre><code data-trim data-noescape class="javascript">
 let root = document.querySelector('#root')
 <mark>
 root.attachShadow({mode: 'open'});
@@ -13,6 +13,21 @@ root.appendChild(div);
     <aside class="notes">
       Mode "closed" déconseillé : fausse sécurité, interactions plus complexes...
     </aside>
+  </section>
+
+  <section>
+    <h3>Les modes</h3>
+    <pre><code data-trim data-noescape class="javascript">
+// OPEN
+let shadow1 = elt1.attachShadow({mode: 'open'});
+shadow1 === elt1.shadowRoot; // true
+  </code></pre>
+  <pre class="fragment"><code data-trim data-noescape class="javascript">
+// CLOSED
+let shadow2 = elt2.attachShadow({mode: 'closed'});
+elt2.shadowRoot === null; // true
+shadow2 === elt2.shadowRoot; // false
+    </code></pre>
   </section>
 
   <section>
@@ -53,6 +68,6 @@ root.appendChild(div);
   </section>
 
   <section data-background="images/demo-monkey.gif">
-    <h3>DEMO !</h3>
+    <h3>PETITE DEMO !</h3>
   </section>
 </section>
