@@ -46,21 +46,21 @@ shadow2 === elt2.shadowRoot; // false
     <mark>&lt;slot name="title"&gt;&lt;/slot&gt;</mark>
   &lt;/div&gt;
   &lt;div class="card-block"&gt;
-    <mark>&lt;slot&gt;&lt;/slot&gt;</mark>
+    <mark class="second">&lt;slot&gt;&lt;/slot&gt;</mark>
   &lt;/div&gt;
 &lt;/div&gt;
         </code></pre>
       </div>
-      <div class="col-sm-6 fragment">
+      <div class="col-sm-6 fragmentx">
         <h5>Code HTML</h5>
         <pre><code data-trim data-noescape class="html">
 &lt;my-card&gt;
   &lt;div <mark>slot="title"</mark>&gt;
     &lt;strong&gt;Mon titre&lt;/strong&gt;
   &lt;/div&gt;
-  &lt;div&gt;
+<mark class="second">  &lt;div&gt;
     Lorem ipsum dolor sit amet...
-  &lt;/div&gt;
+  &lt;/div&gt;</mark>
 &lt;/my-card&gt;
         </code></pre>
       </div>

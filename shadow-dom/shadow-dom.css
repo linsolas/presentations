@@ -37,6 +37,13 @@ code.html mark .hljs-title {
   color: #f17100;
 }
 
+mark {
+  background-color: #FCF8E3;
+}
+mark.second {
+  background-color: #C9C5B0;
+}
+
 /*******************************/
 /* DEVOXX FRANCE 2017 TEMPLATE */
 /*******************************/
