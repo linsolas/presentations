@@ -2,12 +2,16 @@
 <html lang="fr">
 <head>
   <title>ShadowDOM Demo</title>
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="../../lib/highlightjs/highlight-atom-one-dark.min.css">
+  <script src="../../lib/highlightjs/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body style="margin: 50px;">
   <h2>6. Variabilisation du style</h2>
 
   <style>
-    .card { width: 400px; margin-bottom: 50px; }
+    .card { width: 300px; margin-bottom: 50px; }
     .card-header { background-color: #283e4a; border: solid 1px #e0e0e0; color: #c7d1d8; padding: 20px; }
     .card-block { border: solid 1px #e0e0e0; border-top: 0; padding: 20px; }
 
@@ -16,23 +20,51 @@
     }
   </style>
 
-  <div class="card">
-    <div class="card-header">
-      Classique HTML
+  <div class="flex">
+    <div class="demo">
+      <div class="card">
+        <div class="card-header">
+          Classique HTML
+        </div>
+        <div class="card-block">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+      </div>
+
+      <my-card>
+        <div slot="title">
+          Web Component
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+      </my-card>
     </div>
-    <div class="card-block">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+    <div class="code">
+      <pre><code class="hljs html">
+&lt;style&gt;
+  .card { width: 300px; margin-bottom: 50px; }
+  ...
+
+  my-card {
+<mark>    --header-color: blue;</mark>
+  }
+&lt;/style&gt;
+&lt;template id="my-card-template"&gt;
+  &lt;style&gt;
+    .card { width: 400px; margin-bottom: 50px; }
+    .card-header {
+<mark>      background-color: var(--header-color, #e60028);</mark>
+      border: solid 1px #e0e0e0; color: #fff; padding: 20px; }
+    .card-block { border: solid 1px #e0e0e0; border-top: 0; padding: 20px; }
+  &lt;/style&gt;
+
+  ...
+&lt;/template&gt;
+      </code></pre>
     </div>
   </div>
-
-  <my-card>
-    <div slot="title">
-      Web Component
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </div>
-  </my-card>
 
 
   <template id="my-card-template">

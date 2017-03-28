@@ -1,0 +1,10 @@
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+.flex > .demo, .flex > .code {
+  flex: 1;
+}
+mark {
+  background-color: #f5f5f5;
+}

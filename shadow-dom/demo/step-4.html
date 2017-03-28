@@ -2,26 +2,57 @@
 <html lang="fr">
 <head>
   <title>ShadowDOM Demo</title>
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="../../lib/highlightjs/highlight-atom-one-dark.min.css">
+  <script src="../../lib/highlightjs/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body style="margin: 50px;">
   <h2>4. Application des styles</h2>
 
   <style>
-    .card { width: 400px; margin-bottom: 50px; }
+    .card { width: 300px; margin-bottom: 50px; }
     .card-header { background-color: #283e4a; border: solid 1px #e0e0e0; color: #c7d1d8; padding: 20px; }
     .card-block { border: solid 1px #e0e0e0; border-top: 0; padding: 20px; }
   </style>
 
-  <div class="card">
-    <div class="card-header">
-      Classique HTML
+  <div class="flex">
+    <div class="demo">
+      <div class="card">
+        <div class="card-header">
+          Classique HTML
+        </div>
+        <div class="card-block">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+      </div>
+
+      <my-card></my-card>
     </div>
-    <div class="card-block">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+    <div class="code">
+      <pre><code class="hljs html">
+<mark>&lt;template id="my-card-template"&gt;
+  &lt;style&gt;</mark>
+    .card { width: 400px; margin-bottom: 50px; }
+    .card-header { background-color: #e60028; border: solid 1px #e0e0e0;
+      color: #fff; padding: 20px; }
+    .card-block { border: solid 1px #e0e0e0; border-top: 0; padding: 20px; }
+  &lt;/style&gt;
+
+  &lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+      Default title
+    &lt;/div&gt;
+    &lt;div class="card-block"&gt;
+      Default block
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+      </code></pre>
     </div>
   </div>
 
-  <my-card></my-card>
 
   <template id="my-card-template">
     <style>
