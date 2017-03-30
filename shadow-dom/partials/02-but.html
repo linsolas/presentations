@@ -15,14 +15,51 @@
   </section>
 
   <section>
-    <h3><span class="important">#1</span> Isoler le DOM</h3>
+    <h3>Web Components</h3>
+    <h4>Les spécifications</h4>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="box">
+          <h3><i class="fa fa-html5"></i></h3>
+          <p>HTML Templates</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="box">
+          <h3><i class="fa fa-code"></i></h3>
+          <p>Custom Elements</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="box">
+          <h3><i class="fa fa-cloud-download"></i></h3>
+          <p>HTML Imports</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="box fragment grow">
+          <h3><i class="fa fa-snapchat-ghost"></i></h3>
+          <p class="">Shadow DOM</p>
+        </div>
+      </div>
+    </div>
+    <aside class="notes">
+      Le shadow DOM est encore en editor draft, et est la moins avancée des 4.
+    </aside>
+  </section>
+
+  <section>
+    <h3><span class="important">(1)</span> Isoler le DOM</h3>
     <br>
     <p>
       Depuis <span class="important">l'extérieur</span>, cacher l'arbre des composants du shadow DOM.
     </p>
+    <aside class="notes">
+      Un bon exemple : le tag &lt;video&gt;
+    </aside>
   </section>
   <section>
-    <h3><span class="important">#2</span> Contrôler la portée du CSS</h3>
+    <h3><span class="important">(2)</span> Contrôler la portée du CSS</h3>
     <br>
     <ul class="fa-ul">
       <li><i class="fa fa-download" style="color: #e60028"></i> Le CSS de la page n'impacte pas le composant.</li>
