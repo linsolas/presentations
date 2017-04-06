@@ -40,7 +40,6 @@
     } else {
       console.log('HTML Import not supported!');
       window.addEventListener('HTMLImportsLoaded', function(e) {
-        console.log('Coucou !');
         importPartials();
       });
       return;
