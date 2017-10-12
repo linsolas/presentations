@@ -30,22 +30,22 @@
     <h3>Classe ES6</h3>
     <pre><code class="hljs" data-trim>
 class Foo extends Bar {
-// constructeur
-constructor(name = 'Sherlock Holmes') {
-super();
-this._name = name;
-// ES5: this._name = name || 'Sherlock Holmes';
-}
+  // constructeur
+  constructor(name = 'Sherlock Holmes') {
+    super();
+    this._name = name;
+    // ES5: this._name = name || 'Sherlock Holmes';
+  }
 
-get name() { return this._name; } // let myName = myFoo.name;
-set name(name) { this._name = name; } // myFoo.name = 'Dr. Watson';
+  get name() { return this._name; } // let myName = myFoo.name;
+  set name(name) { this._name = name; } // myFoo.name = 'Dr. Watson';
 
-welcome() {
-let lower = this._name.toLowerCase();
-return `Bonjour
-        ${lower} !`;
-// ES5: return 'Bonjour \n' + lower + ' !';
-}
+  welcome() {
+    let lower = this._name.toLowerCase();
+    return `Bonjour
+            ${lower} !`;
+    // ES5: return 'Bonjour \n' + lower + ' !';
+  }
 }
     </code></pre>
   </section>
@@ -53,10 +53,10 @@ return `Bonjour
     <h3>Classe ES6</h3>
     <pre><code class="hljs" data-trim>
 class Foo extends Bar {
-// Fonction statique
-static defaultFoo() {
-return new Foo('Dr. Watson');
-}
+  // Fonction statique
+  static defaultFoo() {
+    return new Foo('Dr. Watson');
+  }
 }
 
 let myFoo = Foo.defaultFoo();
@@ -72,7 +72,7 @@ let pairs = nombres.filter(n => n % 2 === 0);
 
 // ES5
 var pairs = nombres.filter(function(n) {
-return n % 2 === 0;
+  return n % 2 === 0;
 });
     </code></pre>
   </section>
@@ -82,17 +82,17 @@ return n % 2 === 0;
     <pre><code class="hljs" data-trim>
 // ES6
 this.nombres.forEach(n => {
-this.maListe.push(n);
+  this.maListe.push(n);
 });
 
 // ES5
 this.nombres.forEach(function(n) {
-this.maListe.push(n);
+  this.maListe.push(n);
 }.bind(this));
 // ou
 var self = this;
 this.nombres.forEach(function(n) {
-self.maListe.push(n);
+  self.maListe.push(n);
 });
     </code></pre>
   </section>
@@ -103,18 +103,18 @@ self.maListe.push(n);
 const lettres = ['a', 'b', 'c', 'd', 'e'];
 
 for (var i = 0; i < lettres.length; i++) {
-console.log('lettre ', lettres[i]);
+  console.log('lettre ', lettres[i]);
 }
 
 for (let i in lettres) {
-console.log('lettre ', i);
-// console.log('lettre', lettres[i]);
+  console.log('lettre ', i);
+  // console.log('lettre', lettres[i]);
 }
 // Affiche 'lettre 0', 'lettre 1', 'lettre 2', 'lettre 3', ...
 
 // ES6
 for (let lettre of lettres) {
-console.log('lettre ', lettre);
+  console.log('lettre ', lettre);
 }
 // Affiche 'lettre a', 'lettre b', 'lettre c', 'lettre d', ...
     </code></pre>
@@ -156,18 +156,18 @@ console.log('lettre ', lettre);
     <h3>exemple TypeScript</h3>
     <pre><code class="hljs" data-trim>
 interface ClockInterface {
-currentTime: Date;
-setTime(d: Date);
+  currentTime: Date;
+  setTime(d: Date);
 }
 
 class Clock implements ClockInterface  {
-currentTime: Date;
-setTime(d: Date) {
-this.currentTime = d;
-}
-constructor(h: number, m: number) {
-// ...
-}
+  currentTime: Date;
+  setTime(d: Date) {
+    this.currentTime = d;
+  }
+  constructor(h: number, m: number) {
+    // ...
+  }
 }
     </code></pre>
   </section>
@@ -178,8 +178,8 @@ constructor(h: number, m: number) {
 import { Component } from '@angular/core';
 
 @Component({
-selector: 'my-app',
-template: `&lt;h1&gt;Hello {{name}}&lt;/h1&gt;`
+  selector: 'my-app',
+  template: `&lt;h1&gt;Hello {{name}}&lt;/h1&gt;`
 })
 export class AppComponent { name = 'Angular'; }
       </code></pre>

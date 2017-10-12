@@ -17,69 +17,21 @@
     <h3>Architecture "SPA"</h3>
     <img src="./images/mvc2.png" alt="" class="no-border"/>
   </section>
-</section>
 
-<section class="partial">
   <section>
-    <h3>AngularJS</h3>
+    <h3><i class="fa fa-google"></i> AngularJS</h3>
     <ul class="fa-ul">
       <li><i class="fa-li fa fa-google"></i> Framework SPA par Google</li>
       <li><i class="fa-li fa fa-object-group"></i> Découplage "MVC"</li>
       <li><i class="fa-li fa fa-flask"></i> Complètement testable</li>
       <li><i class="fa-li fa fa-arrows-h"></i> Double binding</li>
-      <li><i class="fa-li fa fa-code"></i> Directives</li>
       <li><i class="fa-li fa fa-users"></i> Enorme communauté</li>
       <li><i class="fa-li fa fa-heartbeat"></i> Remplacé par Angular ("<em>tout court</em>")</li>
     </ul>
   </section>
-  <section>
-    <h3>Côté HTML (vue)</h3>
-    <pre><code class="hljs" data-trim>
-<html ng-app>
-<div ng-controller="TodoListController as ctrl">
-<span>{{ctrl.remaining()}} of {{ctrl.items.length}} remaining</span>
-<!-- Liste des éléments -->
-<ul>
-<li ng-repeat="item in ctrl.items">
-  <input type="checkbox" ng-model="item.done">
-  <span>{{item.text}}</span>
-</li>
-</ul>
-<!-- Ajout d'un élément -->
-<form ng-submit="ctrl.addItem()">
-<input type="text" ng-model="ctrl.newItem">
-<input class="btn-primary" type="submit" value="add">
-</form>
-</div>
-</html>
-    </code></pre>
-  </section>
-  <section>
-    <h3>Côté JS (contrôleur)</h3>
-    <pre><code class="hljs" data-trim>
-angular.module('todoApp', [])
-.controller('TodoListController', TodoListController);
 
-function TodoListController() {
-this.items = [{text:'Coder en JS', done: true}, ...];
-this.addItem = () => {
-this.items.push({text: this.newItem, done: false});
-this.newItem = '';
-};
-
-this.remaining = () => {
-return this.items.reduce((sum, item) => {
-  return sum + (item.done ? 0 : 1);
-}, 0);
-};
-});
-    </code></pre>
-  </section>
-</section>
-
-<section class="partial">
   <section>
-    <h3>Angular <span class="strike">2</span></h3>
+    <h3><i class="fa fa-google"></i> Angular <span class="strike">2</span></h3>
     <ul class="fa-ul">
       <li><i class="fa-li fa fa-caret-right"></i> Nouvelle version d'Angular.</li>
       <li><i class="fa-li fa fa-caret-right"></i> Concepts de la v1 abandonnés.</li>
@@ -87,79 +39,27 @@ return this.items.reduce((sum, item) => {
       <li><i class="fa-li fa fa-caret-right"></i> Ecrit en TypeScript.</li>
       <li><i class="fa-li fa fa-calendar"></i> Nouveau rythme de releases.</li>
       <li><i class="fa-li fa fa-warning"></i> Manque de maturité.</li>
+      <li><i class="fa-li fa fa-cogs"></i> Complexité ?</li>
     </ul>
   </section>
 
   <section>
-    <h3>Côté HTML</h3>
-    <pre><code class="hljs" data-trim>
-&lt;head&gt;
-&lt;script&gt;
-System.import('main.js')
-  .catch(err => console.error(err));
-&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;my-app&gt;Loading AppComponent content here ...&lt;/my-app&gt;
-&lt;/body&gt;
-    </code></pre>
+    <h3><i class="fa fa-facebook"></i> React</h3>
+    <ul class="fa-ul">
+      <li><i class="fa-li fa fa-caret-right"></i> Basé sur les <code>Components</code>.</li>
+      <li><i class="fa-li fa fa-cogs"></i> Plus de simplicité...</li>
+      <li><i class="fa-li fa fa-cogs"></i> ... mais demande de créer son écosystème.</li>
+      <li><i class="fa-li fa fa-copyright"></i> <span class="strike">Problème de licence.</span></li>
+    </ul>
   </section>
 
-  <section>
-    <h3>Côté TypeScript (composant)</h3>
-    <pre><code class="hljs" data-trim>
-// app.component.ts
-import { Component } from '@angular/core';
-
-@Component({
-selector: 'my-app',
-template: `<h1>Hello {{name}}</h1>`
-})
-export class AppComponent {
-name = 'Angular';
-}
-    </code></pre>
-  </section>
-  <section>
-    <h3>Côté TypeScript (module)</h3>
-    <pre><code class="hljs" data-trim>
-// app.module.ts
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent }  from './app.component';
-
-@NgModule({
-imports:      [ BrowserModule ],
-declarations: [ AppComponent ],
-bootstrap:    [ AppComponent ]
-})
-export class AppModule { }
-    </code></pre>
-  </section>
-  <section>
-    <h3>Côté TypeScript (application)</h3>
-    <pre><code class="hljs" data-trim>
-// main.ts
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule }              from './app.module';
-
-platformBrowserDynamic().bootstrapModule(AppModule);
-    </code></pre>
-  </section>
-</section>
-
-<section class="partial">
-  <section>
-    <h3>D'autres concurrents...</h3>
-  </section>
-  <section>
-    <h3><i class="fa fa-facebook-official"></i> React</h3>
-    <p><a href="https://facebook.github.io/react/">https://facebook.github.io/react/</a></p>
-    <img src="images/react.png" alt="React" style="height: 50vh;">
-  </section>
   <section>
     <h3>VueJS</h3>
-    <p><a href="https://vuejs.org/">https://vuejs.org/</a></p>
-    <img src="images/vuejs.png" alt="VueJS" style="height: 50vh;">
+    <ul class="fa-ul">
+      <li><i class="fa-li fa fa-caret-right"></i> Proche d'AngularJS (v1).</li>
+      <li><i class="fa-li fa fa-caret-right"></i> Suscite l'intérêt depuis 2016.</li>
+      <li><i class="fa-li fa fa-cogs"></i> Très facile d'accès.</li>
+      <li><i class="fa-li fa fa-question"></i> Pas de grosses entreprise derrière</li>
+    </ul>
   </section>
 </section>
