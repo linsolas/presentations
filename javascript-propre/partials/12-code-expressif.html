@@ -31,12 +31,12 @@
     <h3>Avec jQuery</h3>
     <pre><code class="hljs" data-trim>
 $('#beerForm').submit(() => {
-if ($('#beer_name').val() === '') {
-$('#beer_name').addClass('invalid');
-$('#error_box').show();
-return false;
-}
-return true;
+  if ($('#beer_name').val() === '') {
+    $('#beer_name').addClass('invalid');
+    $('#error_box').show();
+    return false;
+  }
+  return true;
 });
       </code></pre>
   </section>

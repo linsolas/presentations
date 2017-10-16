@@ -24,19 +24,19 @@
     <h3>Exemple d'un test unitaire</h3>
     <pre><code class="hljs" data-trim>
 describe("Testing _ lib", () => {
-beforeEach(() => {
-// To do before every test
-});
+  beforeEach(() => {
+    // To do before every test
+  });
 
-it("should be 42", () => {
-let res = _.last([1, 2, 3, 42]);
-expect(res).toBe(42);
-});
+  it("should be 42", () => {
+    let res = _.last([1, 2, 3, 42]);
+    expect(res).toBe(42);
+  });
 
-it("should not be 1", () => {
-let res = _.max([1, 2, 3]);
-expect(res).not.toBe(1);
-});
+  it("should not be 1", () => {
+    let res = _.max([1, 2, 3]);
+    expect(res).not.toBe(1);
+  });
 });
     </code></pre>
   </section>
@@ -51,21 +51,21 @@ expect(res).not.toBe(1);
     <h3>Exemple de test e2e</h3>
     <pre><code class="hljs" data-trim>
 describe('angularjs homepage todo list', () => {
-it('should add a todo', () => {
-browser.get('https://angularjs.org');
+  it('should add a todo', () => {
+    browser.get('https://angularjs.org');
 
-element(by.model('todoList.todoText')).sendKeys('write first protractor test');
-element(by.css('[value="add"]')).click();
+    element(by.model('todoList.todoText')).sendKeys('write first protractor test');
+    element(by.css('[value="add"]')).click();
 
-let todoList = element.all(by.repeater('todo in todoList.todos'));
-expect(todoList.count()).toEqual(3);
-expect(todoList.get(2).getText()).toEqual('write first protractor test');
+    let todoList = element.all(by.repeater('todo in todoList.todos'));
+    expect(todoList.count()).toEqual(3);
+    expect(todoList.get(2).getText()).toEqual('write first protractor test');
 
-// You wrote your first test, cross it off the list
-todoList.get(2).element(by.css('input')).click();
-let completedAmount = element.all(by.css('.done-true'));
-expect(completedAmount.count()).toEqual(2);
-});
+    // You wrote your first test, cross it off the list
+    todoList.get(2).element(by.css('input')).click();
+    let completedAmount = element.all(by.css('.done-true'));
+    expect(completedAmount.count()).toEqual(2);
+  });
 });
     </code></pre>
   </section>

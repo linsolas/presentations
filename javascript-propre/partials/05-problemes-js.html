@@ -3,8 +3,8 @@
     <h3>Autre problème</h3>
     <pre><code class="hljs" data-trim>
 function updateVAT() {
-var price = document.getElementById("price").value;
-return price + (price * 0.196);
+  var price = document.getElementById("price").value;
+  return price + (price * 0.196);
 }
     </code></pre>
     <div class="super-box">
@@ -30,22 +30,22 @@ return price + (price * 0.196);
     <pre><code class="hljs" data-trim>
 // beers.js
 function checkForm() {
-var beerName = document.forms["beerForm"]["name"].value;
-if (beerName == '') {
-document.getElementById("name_field").className += "invalid";
-return false;
-}
-return true;
+  var beerName = document.forms["beerForm"]["name"].value;
+  if (beerName == '') {
+    document.getElementById("name_field").className += "invalid";
+    return false;
+  }
+  return true;
 }
 
 // sodas.js
 function checkForm() {
-var sodaName = document.forms["sodaForm"]["name"].value;
-if (sodaName == '') {
-document.getElementById("name_field").className += "invalid";
-return false;
-}
-return true;
+  var sodaName = document.forms["sodaForm"]["name"].value;
+  if (sodaName == '') {
+    document.getElementById("name_field").className += "invalid";
+    return false;
+  }
+  return true;
 }
     </code></pre>
   </section>
@@ -54,13 +54,13 @@ return true;
     <h3>Scope global par défaut</h3>
     <pre><code class="hljs" data-trim>
 function subLoop() {
-for (i = 0; i < 10; i++) {
-console.log(i);
-}
+  for (i = 0; i < 10; i++) {
+    console.log(i);
+  }
 }
 
 for (var i = 0; i < 10; i++) {
-subLoop();
+  subLoop();
 }
     </code></pre>
     <hr/>
@@ -89,11 +89,11 @@ subLoop();
     <h3>Tout est public par défaut !</h3>
     <pre><code class="hljs" data-trim>
 var counter = {
-privateValue: 0,
-increment: function() {
-counter.privateValue++;
-return counter.privateValue;
-}
+  privateValue: 0,
+  increment: function() {
+    counter.privateValue++;
+    return counter.privateValue;
+  }
 };
 
 // ailleurs dans le code...
