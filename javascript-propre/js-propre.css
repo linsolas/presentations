@@ -35,3 +35,11 @@
   overflow: inherit;
   max-height: inherit;
 }
+
+html body {
+  background-image:linear-gradient(#03002e, #057ffa);
+}
+
+img {
+  border: 0 !important;
+}
