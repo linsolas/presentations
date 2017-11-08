@@ -157,7 +157,7 @@ for (let lettre of lettres) {
     <pre><code class="hljs" data-trim>
 interface ClockInterface {
   currentTime: Date;
-  setTime(d: Date);
+  setTime(d: Date): void;
 }
 
 class Clock implements ClockInterface  {
