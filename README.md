@@ -1,6 +1,6 @@
 # presentations
 
-Index de mes présentations
+[Index](http://linsolas.github.io/presentations/) de mes présentations
 
 - [Coder proprement en JavaScript](http://linsolas.github.io/presentations/javascript-propre/index.html#/) :fr:
 - [Le shadowDOM pour les nuls](http://linsolas.github.io/presentations/shadow-dom/index.html#/) :fr:
