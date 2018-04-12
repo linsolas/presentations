@@ -24,7 +24,7 @@
 .strike {
   text-decoration: line-through;
 }
-.title-index {
+.title-index, .socgen {
   color: #e60028;
 }
 
@@ -46,4 +46,10 @@ html body {
 
 img {
   border: 0 !important;
+}
+
+.reveal section img.logo {
+  height: 120px;
+  box-shadow: none;
+  background: transparent;
 }

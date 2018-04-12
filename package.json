@@ -20,10 +20,13 @@
     "url": "https://github.com/linsolas/presentations/issues"
   },
   "homepage": "https://github.com/linsolas/presentations#readme",
-  "devDependencies": {
+  "dependencies": {
     "font-awesome": "^4.7.0",
-    "live-server": "^1.2.0",
-    "reveal.js": "^3.4.1",
+    "material-design-icons": "^3.0.1",
+    "reveal.js": "^3.6.0",
     "webcomponents.js": "^0.7.24"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0"
   }
 }
