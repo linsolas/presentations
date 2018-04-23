@@ -20,12 +20,20 @@
   display: inline-block;
   padding: 20px;
 }
-.box2 {
+.box2, .box3 {
   border: solid 1px lightgray !important;
   border-radius: 5px;
+}
+.box2 {
   margin: 10px !important;
   padding: 10px !important;
 }
+.box3 {
+  margin: 5px !important;
+  padding: 5px !important;
+  font-size: 65% !important;
+}
+
 .strike {
   text-decoration: line-through;
 }
