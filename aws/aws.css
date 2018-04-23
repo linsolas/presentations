@@ -20,7 +20,12 @@
   display: inline-block;
   padding: 20px;
 }
-
+.box2 {
+  border: solid 1px lightgray !important;
+  border-radius: 5px;
+  margin: 10px !important;
+  padding: 10px !important;
+}
 .strike {
   text-decoration: line-through;
 }
@@ -28,7 +33,7 @@
   color: #e60028;
 }
 
-.amazon {
+.amazon, .aws {
   color: #ea903a;
 }
 
@@ -52,4 +57,12 @@ img {
   height: 120px;
   box-shadow: none;
   background: transparent;
+}
+
+.credits {
+  color: #ccc;
+}
+
+.reveal .slide-number {
+  color: white;
 }

@@ -15,6 +15,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
   <link rel="stylesheet" href="../revealjs/css/reveal.css">
   <link rel="stylesheet" href="../revealjs/css/theme/romain.css" id="theme">
 
@@ -36,6 +38,7 @@
   </script>
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
 
   <!--[if lt IE 9]>
   <script src="lib/js/html5shiv.js"></script>
@@ -46,7 +49,9 @@
   <link rel="import" href="./slides/02-classic-archi.html"  role="slide">
   <link rel="import" href="./slides/03-cloud.html"          role="slide">
   
-  <link rel="import" href="./slides/10-serverless.html"     role="slide">
+  <link rel="import" href="./slides/04-serverless.html"     role="slide">
+
+  <link rel="import" href="./slides/05-conclusion.html"     role="slide">
 </head>
 
 <body>
@@ -113,7 +118,7 @@ function initReveal() {
             text: 'IT resources vs usage'
         },
         xAxis: [{labels: false}],
-        yAxis: [{labels: false}],
+        yAxis: {title: {text: 'Usage of your service (#visitors...)'}},
         tooltip: {shared: true},
         legend: false,
         series: [{
@@ -122,7 +127,7 @@ function initReveal() {
             data: [60, 70, 100, 150, 140, 80, 70, 75, 90, 120, 130, 80]
         }, {
             color: cloud ? 'green' : 'red',
-            name: `IT resources (${cloud ? 'cloud' : 'classic'})`,
+            name: 'IT resources',
             type: 'spline',
             data: data
         }]
