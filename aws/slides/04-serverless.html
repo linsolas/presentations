@@ -1,8 +1,7 @@
 <section class="partial">
     <section>
         <h3>Serverless</h3>
-        <p>Another
-            <em>buzzword</em> ?</p>
+        <p>Another <em>buzzword</em> ?</p>
         <p class="fragment">short answer: no!</p>
     </section>
 
@@ -31,6 +30,12 @@
     </section>
 
     <section>
+        <h3>Serverless ?</h3>
+        <img src="images/serverless-made-of-servers.jpg" alt="">
+        <p class="fragment">Let your developers <span class="aws">focus on the code</span>, not on the infrastructure.</p>
+    </section>
+
+    <section>
         <h3>Functions As A Service</h3>
         <img src="images/faas.png" alt="FAAS">
         <span class="credits">https://serverless.zone</span>
@@ -50,13 +55,13 @@
         <h3>Use case #2</h3>
         <img src="images/aws-lambda-use-case-2.png" alt="">
     </section>
-    <section>
+    <!-- <section>
         <h3>Use case #3</h3>
         <img src="images/aws-lambda-use-case-3.png" alt="">
-    </section>
+    </section> -->
 
     <section>
-        <h3>Another silver bullet?</h3>
+        <h3>Yet another<br>"<em>silver bullet</em>"<br>?</h3>
 
     </section>
 
@@ -64,20 +69,24 @@
         <h3>When to use serverless?</h3>
         <div style="display: grid">
             <div style="grid-column: 1; grid-row: 1; margin: 20px;">
-                <ul>
-                    <li>Batch jobs</li>
-                    <li>Data sciences processing</li>
-                    <li>Chatbots</li>
+                <ul class="fa-ul">
+                    <li><i class="fa fa-archive"></i> Batch jobs</li>
+                    <li><i class="fa fa-flask"></i> Data sciences processing</li>
+                    <li><i class="fa fa-comments-o"></i> Chatbots</li>
+                    <li>...</li>
                 </ul>
             </div>
             <div style="grid-column: 2; grid-row: 1; margin: 20px;">
-                <ul>
-                    <li>Lightweight API</li>
-                    <li>...</li>
-                    <li>...</li>
+                <ul class="fa-ul">
+                    <li><i class="fa fa-connectdevelop"></i> Lightweight API</li>
+                    <li><i class="fa fa-picture-o"></i> Image &amp; video manipulation</li>
+                    <li><i class="fa fa-github"></i> CI/CD (builds / deploy)</li>
                 </ul>
             </div>
         </div>
+        <aside class="notes">
+            Drawbacks of FAAS: vendor locks-in, multitenancy issues, loss of IT optimization
+        </aside>
     </section>
 
 </section>

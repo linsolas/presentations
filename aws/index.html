@@ -15,7 +15,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/bootstrap-3.3.7.min.css">
 
   <link rel="stylesheet" href="../revealjs/css/reveal.css">
   <link rel="stylesheet" href="../revealjs/css/theme/romain.css" id="theme">
@@ -37,8 +37,8 @@
     document.getElementsByTagName('head')[0].appendChild(link);
   </script>
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="lib/highcharts.js"></script>
+<script src="lib/series-label.js"></script>
 
   <!--[if lt IE 9]>
   <script src="lib/js/html5shiv.js"></script>
@@ -134,100 +134,8 @@ function initReveal() {
     });
   }
 
-  const generateMonoToServerless = () => {
-    Highcharts.chart('container-serverless', {
-      chart: {
-        backgroundColor: 'white',
-        events: {
-          load: function () {
-            // Draw the flow chart
-            var ren = this.renderer;
-            var colors = Highcharts.getOptions().colors;
-            var dash = { 'stroke-width': 2, stroke: 'silver', dashstyle: 'dash' };
-            var bold = { fontWeight: 'bold' };
-
-            // 1st separator
-            ren.path(['M', 150, 40, 'L', 150, 330])
-              .attr(dash)
-              .add();
-
-            // 2nd separator
-            ren.path(['M', 375, 40, 'L', 375, 330])
-              .attr(dash)
-              .add();
-
-            // Headers
-            ren.label('Monolithic', 20, 40)
-              .css(bold)
-              .add();
-            ren.label('Micro-services', 220, 40)
-              .css(bold)
-              .add();
-            ren.label('Serverless', 440, 40)
-              .css(bold)
-              .add();
-
-            // SaaS client label
-            ren.label('Monolith', 10, 80)
-              .attr({
-                fill: colors[0],
-                stroke: 'white',
-                'stroke-width': 2,
-                padding: 5,
-                r: 5,
-                width: 100,
-                height: 150
-              })
-              .css({
-                color: 'white'
-              })
-              .add()
-              .shadow(true);
-
-
-            var ms = { r: 5, width: 100, fill: colors[1] };
-            var msCss = { color: 'white', fontWeight: 'bold' };
-            ren.label('Micro-service', 210, 80)
-              .attr(ms).css(msCss).add().shadow(true);
-            ren.label('Micro-service', 210, 125)
-              .attr(ms).css(msCss).add().shadow(true);
-            ren.label('Micro-service', 210, 170)
-              .attr(ms).css(msCss).add().shadow(true);
-            ren.label('Micro-service', 210, 215)
-              .attr(ms).css(msCss).add().shadow(true);
-
-            // Function
-            var fun = { fill: colors[3], stroke: 'white', 'stroke-width': 2, padding: 5, r: 5, width: '100px' };
-            var funCss = { color: 'white' };
-
-            ren.label('Function', 440, 80)
-              .attr(fun).css(funCss).add().shadow(true);
-            ren.label('Function', 440, 105)
-              .attr(fun).css(funCss).add().shadow(true);
-            ren.label('Function', 440, 130)
-              .attr(fun).css(funCss).add().shadow(true);
-            ren.label('Function', 440, 155)
-              .attr(fun).css(funCss).add().shadow(true);
-            ren.label('Function', 440, 180)
-              .attr(fun).css(funCss).add().shadow(true);
-            ren.label('Function', 440, 205)
-              .attr(fun).css(funCss).add().shadow(true);
-          }
-        }
-      },
-      title: {
-        text: 'From Monolithic to serverless...',
-        style: {
-          color: 'black'
-        }
-      }
-
-    });
-  }
-
   Reveal.addEventListener('highcharts-classic', () => generateChart(false));
   Reveal.addEventListener('highcharts-cloud', () => generateChart(true));
-  Reveal.addEventListener('highcharts-serverless', generateMonoToServerless);
 }
 </script>
 
