@@ -10,8 +10,36 @@
 
 <section class="partial">
   <section>
+    <h3>ECMAScript</h3>
+    <p>Spécifications ECMA-262 &amp; ECMA-402</p>
+    <table>
+      <tr>
+        <td>ES1</td>
+        <td>ES2</td>
+        <td>ES3</td>
+        <td>ES4</td>
+        <td>ES5</td>
+        <td>ES6</td>
+        <td>ES7</td>
+        <td>ES8</td>
+        <td>ES9</td>
+      </tr>
+      <tr>
+        <td>1997</td>
+        <td>1998</td>
+        <td>1999</td>
+        <td><i class="fa fa-skull"></i></td>
+        <td>2009</td>
+        <td>2015</td>
+        <td>2016</td>
+        <td>2017</td>
+        <td>2018</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
     <h3>ES6 / ES2015</h3>
-    <p>ECMAScript 6 est la nouvelle spécification du langage JavaScript</p>
   </section>
 
   <section>
@@ -41,7 +69,7 @@ class Foo extends Bar {
   set name(name) { this._name = name; } // myFoo.name = 'Dr. Watson';
 
   welcome() {
-    let lower = this._name.toLowerCase();
+    const lower = this._name.toLowerCase();
     return `Bonjour
             ${lower} !`;
     // ES5: return 'Bonjour \n' + lower + ' !';
@@ -136,8 +164,36 @@ for (let lettre of lettres) {
       <li><i class="fa-li fa fa-caret-right"></i> <code>Object.entries()</code> et <code>Object.values()</code></li>
       <li><i class="fa-li fa fa-caret-right"></i> <code>String.padStart()</code> et <code>String.padEnd()</code></li>
       <li><i class="fa-li fa fa-caret-right"></i> <code>Object.getOwnPropertyDescriptors()</code></li>
-      <li><i class="fa-li fa fa-globe"></i> <a href="http://kangax.github.io/compat-table/es2016plus/" target="_blank">Tableau de compatibilité</a></li>
     </ul>
+  </section>
+
+  <section>
+    <h3>ES 2018</h3>
+    <ul class="fa-ul">
+      <li><i class="fa-li fa fa-caret-right"></i> <code>Promise.finally</code></li>
+      <li><i class="fa-li fa fa-caret-right"></i> Object rest / spread properties</li>
+      <li><i class="fa-li fa fa-caret-right"></i> RegExp enhancements</li>
+      <li><i class="fa-li fa fa-caret-right"></i> Asynchronous iterators</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>ES 2019</h3>
+    <ul class="fa-ul">
+      <li><i class="fa-li fa fa-caret-right"></i> Optional <code>catch</code> binding</li>
+      <li><i class="fa-li fa fa-caret-right"></i> <code>Function.prototype.toString</code> revision</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Et la compatibilité ?</h3>
+    <p>
+      <ul class="fa-ul">
+        <li><i class="fa-li fa fa-table"></i> <a href="http://kangax.github.io/compat-table/es2016plus/" target="_blank">Tableau de compatibilité</a></li>
+        <li><i class="fa-li fa fa-caret-right"></i> <a href="https://caniuse.com/#" target="_blank">https://caniuse.com/</a></li>
+        <li><i class="fa-li fa fa-caret-right"></i> Transpilation</li>
+      </ul>
+    </p>
   </section>
 </section>
 
@@ -182,6 +238,30 @@ import { Component } from '@angular/core';
   template: `&lt;h1&gt;Hello {{name}}&lt;/h1&gt;`
 })
 export class AppComponent { name = 'Angular'; }
+      </code></pre>
+    </section>
+
+    <section>
+      <pre><code class="hljs" data-trim>
+import {Controller, Get, Post, Body, Param} from '@nestjs/common';
+
+@Controller('cats')
+export class CatsController {
+  @Post()
+  create(@Body() createCatDto) {
+    return 'This action adds a new cat';
+  }
+
+  @Get()
+  findAll(@Query() query) {
+    return `This action returns all cats (limit: ${query.limit} items)`;
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id) {
+    return `This action returns a #${id} cat`;
+  }
+}
       </code></pre>
     </section>
   </section>
@@ -256,4 +336,11 @@ function method2(value: Covariant) {
 }  
       </code></pre>
     </section>
+
+  <section>
+    <h3>Tendance 2018 - State of JS</h3>
+    <p>
+      <a href="https://2018.stateofjs.com/javascript-flavors/overview/" target="_blank">https://2018.stateofjs.com/javascript-flavors/overview/</a>
+    </p>
+  </section>
 </section>

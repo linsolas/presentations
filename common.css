@@ -27,7 +27,9 @@ ul.fa-ul {
 ul.fa-ul > li > i.fa:first-of-type {
   min-width: 50px;
 }
-ul.fa-ul > li > i.fa:first-of-type:not(.fa-twitter):not(.fa-facebook-official) {
+ul.fa-ul > li > i.fa:first-of-type:not(.fa-twitter):not(.fa-facebook-official),
+ul.fa-ul > li > i.fab:first-of-type:not(.fa-twitter):not(.fa-facebook-official),
+ul.fa-ul > li > i.far:first-of-type:not(.fa-twitter):not(.fa-facebook-official) {
   color: #999;
 }
 
